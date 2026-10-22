@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>LcPredictor</artifactId>
+    <artifactId>LeetNode</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>LcPredictor</name>
-    <description>LcPredictor</description>
+    <name>LeetNode</name>
+    <description>LeetNode</description>
     <url/>
     <licenses>
         <license/>
