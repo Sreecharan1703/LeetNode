@@ -5,6 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Error - LeetNode</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Favicon & Web Manifest -->
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="alternate icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#22c55e">
+
   <script>
     (function () {
       try {
@@ -121,18 +130,50 @@
     }
     :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 
+    /* Site Header & Top Bar */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      border-bottom: 1px solid color-mix(in srgb, var(--line) 75%, transparent);
+      transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .site-header.is-scrolled {
+      background: color-mix(in srgb, var(--bg) 92%, transparent);
+      border-bottom-color: var(--line);
+      box-shadow: 0 4px 20px -2px rgba(18, 20, 28, 0.06);
+    }
+    [data-theme="dark"] .site-header.is-scrolled {
+      box-shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.45);
+    }
+
     .topbar {
-      width: min(1040px, 100%);
+      width: min(1400px, 100%);
       margin: 0 auto;
-      padding: 22px 20px 0;
+      padding: 10px clamp(16px, 2.5vw, 32px);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 12px;
+      gap: 16px;
     }
-    .brand { display: inline-flex; line-height: 0; }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      line-height: 0;
+      text-decoration: none;
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .brand:hover {
+      transform: scale(1.02);
+    }
     .brand-logo {
-      height: 48px;
+      height: 38px;
       width: auto;
       display: block;
     }
@@ -145,6 +186,132 @@
     @media (prefers-color-scheme: dark) {
       :root:not([data-theme="light"]) .brand-logo.logo-dark { display: block !important; }
       :root:not([data-theme="light"]) .brand-logo.logo-light { display: none !important; }
+    }
+
+    .brand-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+      padding: 3px 8px;
+      border-radius: 9999px;
+      letter-spacing: 0.02em;
+      line-height: 1.2;
+      user-select: none;
+    }
+    .brand-badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 8px var(--accent);
+      animation: pulse-dot 2.5s infinite ease-in-out;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.45; transform: scale(0.85); }
+    }
+
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      background: color-mix(in srgb, var(--surface) 75%, transparent);
+      padding: 4px;
+      border-radius: 9999px;
+      border: 1px solid var(--line);
+      box-shadow: 0 1px 2px rgba(18, 20, 28, 0.03);
+    }
+    .nav a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 9999px;
+      color: var(--muted);
+      font-size: 13.5px;
+      font-weight: 500;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      border: 1px solid transparent;
+    }
+    .nav-icon {
+      width: 14px;
+      height: 14px;
+      opacity: 0.7;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+      flex-shrink: 0;
+    }
+    .nav a:hover {
+      color: var(--ink);
+      background: var(--surface);
+    }
+    .nav a:hover .nav-icon {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+    .nav a[aria-current="page"] {
+      background: var(--surface);
+      color: var(--ink);
+      font-weight: 600;
+      border-color: color-mix(in srgb, var(--line) 90%, transparent);
+      box-shadow: 0 1px 4px rgba(18, 20, 28, 0.08), 0 0 0 1px color-mix(in srgb, var(--accent) 20%, transparent);
+    }
+    .nav a[aria-current="page"] .nav-icon {
+      opacity: 1;
+      color: var(--accent);
+    }
+
+    .topbar-divider {
+      width: 1px;
+      height: 20px;
+      background: var(--line);
+      margin: 0 2px;
+      flex-shrink: 0;
+    }
+
+    .github-star-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 9999px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      box-shadow: 0 1px 2px rgba(18, 20, 28, 0.03);
+      transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+      flex-shrink: 0;
+    }
+    .github-star-btn:hover {
+      background: var(--surface-2);
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-1px);
+      box-shadow: 0 3px 10px var(--accent-soft);
+    }
+    .github-star-btn:active {
+      transform: scale(0.96);
+    }
+    .github-icon {
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
     }
 
     /* Round Morph Theme Toggle Button */
@@ -270,35 +437,83 @@
     }
     .btn-outline:hover { background: var(--accent-hover); }
     .btn-outline:active { transform: scale(0.98); }
-    @media (max-width: 480px) { .btn-outline { width: 100%; } }
+    @media (max-width: 860px) {
+      .brand-badge { display: none; }
+    }
+    @media (max-width: 680px) {
+      .topbar { padding: 8px clamp(12px, 2.5vw, 20px); gap: 8px; }
+      .brand-logo { height: 32px !important; }
+      .github-star-btn .github-text { display: none; }
+      .github-star-btn { padding: 7px; width: 34px; height: 34px; justify-content: center; }
+      .nav a { padding: 5px 9px; font-size: 12.5px; gap: 4px; }
+      .nav-icon { width: 13px; height: 13px; }
+    }
+    @media (max-width: 480px) {
+      .topbar-divider { display: none; }
+      .nav a span { display: none; }
+      .nav a { padding: 7px; border-radius: 50%; }
+      .nav-icon { width: 15px; height: 15px; }
+      .theme-toggle-btn { width: 34px; height: 34px; }
+      .btn-outline { width: 100%; }
+    }
     @media (prefers-reduced-motion: reduce) { .btn-outline { transition: none; } }
-    @media (max-width: 480px) { .brand-logo { height: 40px; } }
   </style>
 </head>
 <body>
-<header class="topbar">
-  <a class="brand" href="/" aria-label="LeetNode home">
-    <img th:src="@{/images/leetnode-logo-light.svg}" src="/images/leetnode-logo-light.svg"
-         alt="LeetNode" class="brand-logo logo-light">
-    <img th:src="@{/images/leetnode-logo-dark.svg}" src="/images/leetnode-logo-dark.svg"
-         alt="LeetNode" class="brand-logo logo-dark">
-  </a>
-  <button id="themeToggleBtn" class="theme-toggle-btn" type="button" aria-label="Toggle theme" title="Toggle theme">
-    <svg class="theme-toggle-icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <circle cx="12" cy="12" r="4.5" fill="currentColor"/>
-      <line x1="12" y1="2" x2="12" y2="4.2"/>
-      <line x1="12" y1="19.8" x2="12" y2="22"/>
-      <line x1="4.93" y1="4.93" x2="6.48" y2="6.48"/>
-      <line x1="17.52" y1="17.52" x2="19.07" y2="19.07"/>
-      <line x1="2" y1="12" x2="4.2" y2="12"/>
-      <line x1="19.8" y1="12" x2="22" y2="12"/>
-      <line x1="4.93" y1="19.07" x2="6.48" y2="17.52"/>
-      <line x1="17.52" y1="6.48" x2="19.07" y2="4.93"/>
-    </svg>
-    <svg class="theme-toggle-icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor"/>
-    </svg>
-  </button>
+<header class="site-header" id="top">
+  <div class="topbar">
+    <a class="brand" href="/" aria-label="LeetNode home">
+      <img th:src="@{/images/leetnode-logo-light.svg}" src="/images/leetnode-logo-light.svg"
+           alt="LeetNode" class="brand-logo logo-light">
+      <img th:src="@{/images/leetnode-logo-dark.svg}" src="/images/leetnode-logo-dark.svg"
+           alt="LeetNode" class="brand-logo logo-dark">
+    </a>
+    <div class="topbar-actions">
+      <nav class="nav" aria-label="Main Navigation">
+        <a href="/" th:href="@{/}">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          </svg>
+          <span>Home</span>
+        </a>
+        <a href="/rating" th:href="@{/rating}">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 14l4-4"/><path d="M3.3 17a9 9 0 1 1 17.4 0"/>
+          </svg>
+          <span>Predict</span>
+        </a>
+        <a href="/filter" th:href="@{/filter}">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+          </svg>
+          <span>Filter</span>
+        </a>
+      </nav>
+      <div class="topbar-divider" aria-hidden="true"></div>
+      <a class="github-star-btn" href="https://github.com/Sreecharan1703/Leetcode_Rating_Predictor" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository" title="Star LeetNode on GitHub">
+        <svg class="github-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+        </svg>
+        <span class="github-text">Star</span>
+      </a>
+      <button id="themeToggleBtn" class="theme-toggle-btn" type="button" aria-label="Toggle theme" title="Toggle theme">
+        <svg class="theme-toggle-icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.5" fill="currentColor"/>
+          <line x1="12" y1="2" x2="12" y2="4.2"/>
+          <line x1="12" y1="19.8" x2="12" y2="22"/>
+          <line x1="4.93" y1="4.93" x2="6.48" y2="6.48"/>
+          <line x1="17.52" y1="17.52" x2="19.07" y2="19.07"/>
+          <line x1="2" y1="12" x2="4.2" y2="12"/>
+          <line x1="19.8" y1="12" x2="22" y2="12"/>
+          <line x1="4.93" y1="19.07" x2="6.48" y2="17.52"/>
+          <line x1="17.52" y1="6.48" x2="19.07" y2="4.93"/>
+        </svg>
+        <svg class="theme-toggle-icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
+  </div>
 </header>
 
 <main>
@@ -306,8 +521,8 @@
     <div class="error-icon" aria-hidden="true">
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg>
     </div>
-    <h2>Congrats, you found a wild error!</h2>
-    <p class="error-lead">Here's what went wrong:</p>
+    <h2>Execution Error</h2>
+    <p class="error-lead">An unexpected runtime exception occurred:</p>
     <div class="error-message" th:text="${error}">
       Default error message fallback
     </div>
@@ -376,6 +591,21 @@
         );
       });
     });
+  })();
+
+  // Sticky Header Elevation Observer
+  (function setupHeaderScroll() {
+    const header = document.querySelector('.site-header');
+    if (!header) return;
+    const updateHeader = () => {
+      if (window.scrollY > 8) {
+        header.classList.add('is-scrolled');
+      } else {
+        header.classList.remove('is-scrolled');
+      }
+    };
+    window.addEventListener('scroll', updateHeader, { passive: true });
+    updateHeader();
   })();
 </script>
 </body>
