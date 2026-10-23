@@ -1,12 +1,12 @@
 <div align="center">
 
-# LeetcodePredictor
+# LeetNode
 
-**Wanna grind LeetCode but don't know how hard the problem is? Here's a gift for you.**
+**Wanna grind LeetCode but don't know where to start? Here's a gift for you.**
 
 Predict a problem's rating, get problems picked for your level, and filter questions by rating.
 
-### 🔗 [leetcodepredictor.my.to](https://leetcodepredictor.my.to)
+### 🔗 [leetnode.my.to](https://leetnode.my.to)
 
 ![Java](https://img.shields.io/badge/Java-17-ED8B00?logo=openjdk&logoColor=white)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?logo=springboot&logoColor=white)
@@ -36,7 +36,7 @@ Predict a problem's rating, get problems picked for your level, and filter quest
 
 ## About
 
-LeetCode shows Easy / Medium / Hard, but inside each of those labels the difficulty varies a lot. **LeetcodePredictor** gives every problem an estimated numeric rating (like a contest rating) so you can choose problems that match your level instead of guessing.
+LeetCode shows Easy / Medium / Hard, but inside each of those labels the difficulty varies a lot. **LeetNode** gives every problem an estimated numeric rating (like a contest rating) so you can choose problems that match your level instead of guessing.
 
 ## Features
 
@@ -47,7 +47,7 @@ LeetCode shows Easy / Medium / Hard, but inside each of those labels the difficu
 | 🔎 | **Rating filter** | Pick a rating range and browse every problem inside it, 10 per page. |
 | 🔗 | **One-click solve** | Every problem has a **Solve** button that opens it on LeetCode. |
 | 📊 | **View counter** | Total views and views today, stored in the database so restarts don't reset them. |
-| 🌗 | **Light and dark mode** | Follows the visitor's system theme. |
+| 🌗 | **Light and dark mode** | switch between website themes. |
 | 📱 | **Responsive** | Works on phones, tablets and desktops. |
 
 ## Tech stack
@@ -81,12 +81,13 @@ A step-by-step walkthrough of every page.
 
 The starting point. Choose what you want to do.
 
-1. Open **[leetcodepredictor.my.to](https://leetcodepredictor.my.to)**.
+1. Open **[leetnode.my.to](https://leetnode.my.to)**.
 2. Pick any of the available cards: **Predict rating**, **Get recommendations**, or **Filter questions**.
 3. The footer shows the total views and today's views, plus the credits.
 
-<img width="1165" height="900" alt="Screenshot 2026-10-13 225349" src="https://github.com/user-attachments/assets/21857499-e8c8-455b-9995-2f20718d7f0b" />
-<img width="1200" height="597" alt="Screenshot 2026-10-13 225516" src="https://github.com/user-attachments/assets/959fbf0e-b4a3-4577-ba4f-e4f6c7f901a9" />
+<img width="1901" height="911" alt="Screenshot 2026-10-23 182557" src="https://github.com/user-attachments/assets/db687f38-4253-4d50-9102-f7fa04445ec8" />
+<img width="1897" height="812" alt="Screenshot 2026-10-23 182647" src="https://github.com/user-attachments/assets/4d9dc314-1b13-4500-b8c0-3d47cf646dbc" />
+<img width="1901" height="758" alt="Screenshot 2026-10-23 182710" src="https://github.com/user-attachments/assets/dbf50365-d3d1-4fd1-9405-504aacb90c72" />
 
 ---
 
@@ -102,8 +103,8 @@ The starting point. Choose what you want to do.
    - topic tags
 5. Click **New Search** to try another problem.
 
-<img width="1158" height="691" alt="Screenshot 2026-10-13 225650" src="https://github.com/user-attachments/assets/e7e1afbe-7ef0-4e31-9ea6-fe9f5d772181" />
-<img width="1378" height="911" alt="Screenshot 2026-10-13 225740" src="https://github.com/user-attachments/assets/ae8ba5ff-9971-4349-8a95-ece20927dac6" />
+<img width="1900" height="907" alt="Screenshot 2026-10-23 182815" src="https://github.com/user-attachments/assets/1a1c2e6f-da7f-4925-8145-f448e9553017" />
+<img width="1900" height="832" alt="Screenshot 2026-10-23 182858" src="https://github.com/user-attachments/assets/836d983f-ab98-47c7-83be-5208095243d8" />
 
 ---
 
@@ -119,9 +120,9 @@ The starting point. Choose what you want to do.
 5. Click **Solve** next to a problem to open it on LeetCode in a new tab.
 6. Use **Previous / Next** to move through more problems.
 
-<img width="1452" height="767" alt="Screenshot 2026-10-13 225905" src="https://github.com/user-attachments/assets/a5c6b1ff-c193-42c9-8675-1dbefe6c8132" />
-<img width="1452" height="842" alt="Screenshot 2026-10-13 225923" src="https://github.com/user-attachments/assets/f18d5f17-2755-4c95-8d92-e09be466757a" />
-<img width="1452" height="903" alt="Screenshot 2026-10-13 230001" src="https://github.com/user-attachments/assets/034baa74-3767-42b3-9093-a58b6a1a37e2" />
+<img width="1900" height="910" alt="Screenshot 2026-10-23 183010" src="https://github.com/user-attachments/assets/21000db9-8c8b-470c-adce-aacb29488a24" />
+<img width="1900" height="907" alt="Screenshot 2026-10-23 183051" src="https://github.com/user-attachments/assets/2539190d-4202-41ae-9653-a612a7696154" />
+<img width="1900" height="831" alt="Screenshot 2026-10-23 183147" src="https://github.com/user-attachments/assets/375f42be-984c-4d1f-aa48-409f659945fd" />
 
 
 
@@ -138,8 +139,10 @@ The starting point. Choose what you want to do.
 4. Browse the results, 10 per page, and use **Previous / Next** to change pages.
 5. Click **Solve** to open a problem on LeetCode.
 
-<img width="1452" height="737" alt="Screenshot 2026-10-13 230213" src="https://github.com/user-attachments/assets/621e0ef1-211d-4c22-aa05-c7ff013f024e" />
-<img width="1447" height="903" alt="Screenshot 2026-10-13 230232" src="https://github.com/user-attachments/assets/39e3648a-d1b2-44e0-9220-e58ebb54ca61" />
+<img width="1901" height="911" alt="Screenshot 2026-10-23 183306" src="https://github.com/user-attachments/assets/b0504751-a727-404b-af1d-dca37a192aac" />
+<img width="1902" height="908" alt="Screenshot 2026-10-23 183337" src="https://github.com/user-attachments/assets/47dc607e-fac5-4883-919a-7dca89ae7bac" />
+<img width="1900" height="376" alt="Screenshot 2026-10-23 183356" src="https://github.com/user-attachments/assets/ad09f734-a223-4fba-b5b6-74dff38a8bb8" />
+
 
 **Input rules:** only whole numbers from 0 to 9999 are accepted. Letters, signs, decimals and exponents (like `1e32`) are removed as you type, and the minimum can't be higher than the maximum.
 
@@ -149,7 +152,8 @@ The starting point. Choose what you want to do.
 
 If something goes wrong (for example a problem number that doesn't exist), you are taken to a friendly error page that shows what happened and a button back to the search.
 
-<img width="1452" height="812" alt="Screenshot 2026-10-13 230443" src="https://github.com/user-attachments/assets/d63026ac-ad30-4c5a-a31c-3d8e92654b3a" />
+<img width="1917" height="910" alt="Screenshot 2026-10-23 183512" src="https://github.com/user-attachments/assets/a360ead6-b5cf-49b2-8120-5b1ab7bd596d" />
+
 
 ## How it works
 
@@ -199,7 +203,7 @@ Spring Boot REST controllers ──► Service layer ──► Spring Cache (@Ca
 **Example**
 
 ```bash
-curl "https://leetcodepredictor.my.to/api/filter?minRange=2440&maxRange=2480&pageNumber=1"
+curl "https://leetnode.my.to/api/filter?minRange=2440&maxRange=2480&pageNumber=1"
 ```
 
 ```json
@@ -264,8 +268,8 @@ Error responses use a JSON body with a `message` field.
 ### 1. Clone
 
 ```bash
-git clone https://github.com/Sreecharan1703/LeetCode_Rating_Predictor.git
-cd LeetCode_Rating_Predictor
+git clone https://github.com/Sreecharan1703/LeetNode.git
+cd LeetNode
 ```
 
 ### 2. Configure the database
