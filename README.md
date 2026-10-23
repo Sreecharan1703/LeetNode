@@ -6,7 +6,7 @@
 
 Predict a problem's rating, get problems picked for your level, and filter questions by rating.
 
-### 🔗 [leetnode.my.to](https://leetnode.my.to)
+### 🔗 [www.leetnode.my.to](https://www.leetnode.my.to)
 
 ![Java](https://img.shields.io/badge/Java-17-ED8B00?logo=openjdk&logoColor=white)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?logo=springboot&logoColor=white)
@@ -81,7 +81,7 @@ A step-by-step walkthrough of every page.
 
 The starting point. Choose what you want to do.
 
-1. Open **[leetnode.my.to](https://leetnode.my.to)**.
+1. Open **[www.leetnode.my.to](https://www.leetnode.my.to)**.
 2. Pick any of the available cards: **Predict rating**, **Get recommendations**, or **Filter questions**.
 3. The footer shows the total views and today's views, plus the credits.
 
@@ -203,7 +203,7 @@ Spring Boot REST controllers ──► Service layer ──► Spring Cache (@Ca
 **Example**
 
 ```bash
-curl "https://leetnode.my.to/api/filter?minRange=2440&maxRange=2480&pageNumber=1"
+curl "https://www.leetnode.my.to/api/filter?minRange=2440&maxRange=2480&pageNumber=1"
 ```
 
 ```json
