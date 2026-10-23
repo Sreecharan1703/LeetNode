@@ -26,6 +26,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://www.leetnode.my.to/roadmap</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://www.leetnode.my.to/home</loc>
     <lastmod>2026-10-23</lastmod>
     <changefreq>daily</changefreq>

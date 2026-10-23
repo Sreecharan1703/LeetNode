@@ -19,6 +19,12 @@
   - Includes quick preset buttons (1200-1400, 1400-1600, 1600-1900, 1900-2200).
   - Features pagination and direct links to solve problems on LeetCode.
 
+- **Data Structures & Algorithms Roadmap (`/roadmap`)**:
+  - Comprehensive, interactive 4-tier visual curriculum graph covering foundational linear structures through advanced master-level algorithms.
+  - Tiers span: Level 1 (Beginner Foundations), Level 2 (Intermediate Problem Solving), Level 3 (Trees, Graphs & Dynamic Programming), and Level 4 (Master Structures & Contest Q4 Algorithms).
+  - Features direct one-click navigation to official LeetCode problem lists for every topic (e.g. Dynamic Programming, Two Pointers, Graphs, Binary Search).
+  - Includes personal progress tracking and live topic search filtering.
+
 ## Key Entities & Specifications
 
 - **Name**: LeetNode (also referred to as LC Predictor / LeetCode Rating Predictor / IIITN LeetCode / DotSlash LC Predictor)
@@ -44,3 +50,4 @@ By fetching a candidate's current contest rating from their LeetCode profile, Le
 - Predict Problem Rating: https://www.leetnode.my.to/rating
 - Personalized Recommendations: https://www.leetnode.my.to/profile
 - Filter Problems by Range: https://www.leetnode.my.to/filter
+- DSA Roadmap: https://www.leetnode.my.to/roadmap

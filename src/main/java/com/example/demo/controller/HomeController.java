@@ -37,6 +37,11 @@ public class HomeController {
     @GetMapping("/filter")
     public String filter(){return "filterPage";}
 
+    @GetMapping("/roadmap")
+    public String roadmap(){
+        return "roadmapPage";
+    }
+
     @GetMapping("/api-error")
     public String errorPage(@RequestParam("message") String message, Model model){
         model.addAttribute("error",message);

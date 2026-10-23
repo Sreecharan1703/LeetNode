@@ -1,0 +1,1839 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Structures & Algorithms Roadmap - LeetNode</title>
+
+    <!-- Primary SEO Meta Tags -->
+    <meta name="google-site-verification" content="Ff2GGqlVfDWZnatvevoZGH2_jhMVphEfb9TrUa7qM6Y" />
+    <meta name="description" content="Step-by-step interactive Data Structures and Algorithms (DSA) Roadmap from beginner to master level. Explore prerequisites, curated LeetCode problem lists, and contest preparation milestones.">
+    <meta name="keywords" content="dsa roadmap, leetcode roadmap, data structures and algorithms roadmap, competitive programming roadmap, iiitn dsa, coding interview prep, dynamic programming leetcode, graph algorithms, binary search, trees, leetnode">
+    <meta name="author" content="Sreecharan Kesireddy">
+    <link rel="canonical" href="https://www.leetnode.my.to/roadmap">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:site_name" content="LeetNode">
+    <meta property="og:title" content="Data Structures & Algorithms Roadmap - LeetNode">
+    <meta property="og:description" content="Interactive DSA learning graph connecting foundational concepts to advanced algorithms with direct LeetCode problem list links.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.leetnode.my.to/roadmap">
+    <meta property="og:image" content="https://www.leetnode.my.to/images/android-chrome-512x512.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DSA Roadmap - LeetNode">
+    <meta name="twitter:description" content="Step-by-step interactive DSA learning graph with direct LeetCode problem list practice.">
+    <meta name="twitter:image" content="https://www.leetnode.my.to/images/android-chrome-512x512.png">
+
+    <!-- Favicon & Web Manifest -->
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+    <link rel="alternate icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#22c55e">
+
+    <!-- Structured JSON-LD Schema (GEO & AEO) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "name": "LeetNode DSA Roadmap",
+          "url": "https://www.leetnode.my.to/roadmap",
+          "applicationCategory": "EducationalApplication",
+          "operatingSystem": "All",
+          "description": "Interactive Data Structures and Algorithms curriculum graph mapping learning milestones directly to LeetCode practice lists.",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.leetnode.my.to/" },
+            { "@type": "ListItem", "position": 2, "name": "DSA Roadmap", "item": "https://www.leetnode.my.to/roadmap" }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How is the LeetNode DSA Roadmap structured?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The roadmap is structured into 4 sequential tiers: Level 1 (Foundations & Linear DSA), Level 2 (Non-Linear & Classic Problem Solving), Level 3 (Trees, Graphs & Dynamic Programming), and Level 4 (Advanced Algorithms & Niche Mastery). Each node links directly to curated LeetCode problem lists."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does clicking a roadmap item help me practice?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Every node links directly to the official LeetCode problem list for that specific topic (e.g. Dynamic Programming, Two Pointers, Graphs), allowing you to immediately solve curated practice problems."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <script>
+        (function () {
+            try {
+                const saved = localStorage.getItem('theme');
+                const theme = saved ? saved : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #F4F5F9;
+            --surface: #FFFFFF;
+            --surface-2: #F0F1F7;
+            --ink: #12141C;
+            --muted: #5E6475;
+            --line: #E1E3EC;
+            --dot: rgba(18, 20, 28, 0.09);
+            --accent: #22c55e;
+            --accent-hover: #16a34a;
+            --accent-soft: rgba(34, 197, 94, 0.10);
+            --on-accent: #FFFFFF;
+            --shadow: 0 1px 2px rgba(18, 20, 28, 0.04), 0 12px 32px -8px rgba(18, 20, 28, 0.10);
+            --lvl-easy: #14956A;
+            --lvl-medium: #B7791F;
+            --lvl-hard: #D92D3A;
+            --lvl-expert: #8b5cf6;
+            --font-display: 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;
+            --font-body: 'Instrument Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
+            color-scheme: light;
+        }
+
+        [data-theme="dark"] {
+            --bg: #0D0F16;
+            --surface: #151824;
+            --surface-2: #1C2030;
+            --ink: #F2F3F8;
+            --muted: #9AA1B5;
+            --line: #272B3C;
+            --dot: rgba(255, 255, 255, 0.07);
+            --accent: #22c55e;
+            --accent-hover: #4ade80;
+            --accent-soft: rgba(34, 197, 94, 0.14);
+            --on-accent: #0D0F16;
+            --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 16px 40px -8px rgba(0, 0, 0, 0.55);
+            --lvl-easy: #4ADE9F;
+            --lvl-medium: #F5C451;
+            --lvl-hard: #FF7A82;
+            --lvl-expert: #a78bfa;
+            color-scheme: dark;
+        }
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            font-family: var(--font-body);
+            background-color: var(--bg);
+            background-image: radial-gradient(var(--dot) 1px, transparent 1px);
+            background-size: 24px 24px;
+            color: var(--ink);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Top Navigation Bar */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: color-mix(in srgb, var(--bg) 85%, transparent);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--line);
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .site-header.scrolled {
+            border-bottom-color: var(--line);
+            box-shadow: 0 8px 24px -6px rgba(0,0,0,0.08);
+        }
+        .topbar {
+            width: min(1400px, 100%);
+            margin: 0 auto;
+            padding: 12px clamp(16px, 2.5vw, 32px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            line-height: 0;
+        }
+        .brand-logo {
+            height: 38px;
+            width: auto;
+            display: block;
+        }
+        [data-theme="dark"] .brand-logo.logo-light { display: none; }
+        [data-theme="dark"] .brand-logo.logo-dark { display: block; }
+        :root:not([data-theme="dark"]) .brand-logo.logo-light { display: block; }
+        :root:not([data-theme="dark"]) .brand-logo.logo-dark { display: none; }
+
+        .topbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            box-shadow: var(--shadow);
+        }
+        .nav a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: 999px;
+            color: var(--muted);
+            font-size: 13.5px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.15s ease, background 0.15s ease;
+        }
+        .nav a:hover {
+            color: var(--ink);
+            background: var(--surface-2);
+        }
+        .nav a[aria-current="page"] {
+            color: var(--ink);
+            background: var(--surface-2);
+            font-weight: 600;
+        }
+        .nav-icon { width: 15px; height: 15px; flex-shrink: 0; }
+        .topbar-divider {
+            width: 1px;
+            height: 20px;
+            background: var(--line);
+        }
+
+        .github-star-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 7px 13px;
+            border-radius: 999px;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            color: var(--ink);
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: var(--shadow);
+            transition: border-color 0.2s ease, background 0.2s ease, transform 0.15s ease;
+        }
+        .github-star-btn:hover {
+            border-color: var(--accent);
+            background: var(--surface-2);
+            transform: translateY(-1px);
+        }
+        .github-icon { width: 16px; height: 16px; flex-shrink: 0; }
+
+        .theme-toggle-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            color: var(--ink);
+            display: grid;
+            place-items: center;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            transition: border-color 0.2s ease, transform 0.15s ease, background 0.2s ease;
+            position: relative;
+        }
+        .theme-toggle-btn:hover {
+            border-color: var(--accent);
+            transform: scale(1.05);
+        }
+        .theme-toggle-icon {
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            transition: opacity 0.2s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .theme-toggle-icon.sun-icon { opacity: 0; transform: scale(0.3) rotate(-90deg); }
+        .theme-toggle-icon.moon-icon { opacity: 1; transform: scale(1) rotate(0deg); }
+        [data-theme="dark"] .theme-toggle-icon.sun-icon { opacity: 1; transform: scale(1) rotate(0deg); }
+        [data-theme="dark"] .theme-toggle-icon.moon-icon { opacity: 0; transform: scale(0.3) rotate(90deg); }
+
+        /* Main Section */
+        main { flex: 1; }
+        .roadmap-container {
+            width: min(1360px, 100%);
+            margin: 0 auto;
+            padding: 36px clamp(16px, 2.5vw, 32px) 80px;
+        }
+
+        /* Hero Header */
+        .roadmap-hero {
+            text-align: center;
+            max-width: 860px;
+            margin: 0 auto 36px;
+        }
+        .roadmap-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 5px 14px;
+            border-radius: 999px;
+            background: var(--accent-soft);
+            border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+            color: var(--accent);
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        .roadmap-badge-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 8px var(--accent);
+        }
+        .roadmap-title {
+            margin: 0 0 14px;
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.2rem, 5.5vw, 3.4rem);
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+        }
+        .roadmap-subtitle {
+            margin: 0 0 24px;
+            color: var(--muted);
+            font-size: clamp(16px, 2vw, 18px);
+            line-height: 1.6;
+        }
+
+        /* Tracker and Stats Bar */
+        .roadmap-stats-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            padding: 16px 24px;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            box-shadow: var(--shadow);
+            margin-bottom: 32px;
+        }
+        .stats-group {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex: 1;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .stat-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: var(--surface-2);
+            border: 1px solid var(--line);
+            display: grid;
+            place-items: center;
+            color: var(--accent);
+        }
+        .stat-value {
+            font-family: var(--font-display);
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--ink);
+        }
+        .stat-label {
+            font-size: 12px;
+            color: var(--muted);
+        }
+        .progress-box {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            min-width: 260px;
+        }
+        .progress-bar-wrap {
+            flex: 1;
+            height: 8px;
+            background: var(--surface-2);
+            border-radius: 999px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+        }
+        .progress-bar-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--accent), #4ade80);
+            border-radius: 999px;
+            transition: width 0.4s cubic-bezier(0.2, 0, 0, 1);
+        }
+        .progress-text {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--ink);
+            white-space: nowrap;
+        }
+
+        /* Interactive Filter Bar */
+        .controls-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 36px;
+        }
+        .search-box-wrap {
+            position: relative;
+            flex: 1;
+            min-width: 260px;
+            max-width: 420px;
+        }
+        .search-icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 17px;
+            height: 17px;
+            color: var(--muted);
+            pointer-events: none;
+        }
+        .search-input {
+            width: 100%;
+            padding: 11px 16px 11px 40px;
+            border-radius: 12px;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            color: var(--ink);
+            font-size: 14px;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .search-input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-soft);
+        }
+        .tier-tabs {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            overflow-x: auto;
+            padding: 4px;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            box-shadow: var(--shadow);
+        }
+        .tier-tab {
+            padding: 8px 16px;
+            border-radius: 10px;
+            border: none;
+            background: transparent;
+            color: var(--muted);
+            font-size: 13px;
+            font-weight: 600;
+            font-family: inherit;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: color 0.15s ease, background 0.15s ease;
+        }
+        .tier-tab:hover {
+            color: var(--ink);
+            background: var(--surface-2);
+        }
+        .tier-tab.active {
+            color: var(--on-accent);
+            background: var(--accent);
+        }
+
+        /* Graph Roadmap Layout */
+        .roadmap-tree {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+
+        /* Tier Milestone Section */
+        .tier-section {
+            position: relative;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 28px;
+            padding: clamp(24px, 3.5vw, 40px);
+            box-shadow: var(--shadow);
+            transition: border-color 0.25s ease;
+        }
+        .tier-section:hover {
+            border-color: color-mix(in srgb, var(--accent) 50%, var(--line));
+        }
+
+        .tier-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 28px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--line);
+        }
+        .tier-title-group {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .tier-number-badge {
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            font-family: var(--font-display);
+            font-size: 18px;
+            font-weight: 800;
+            display: grid;
+            place-items: center;
+            color: #fff;
+            flex-shrink: 0;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+        }
+        .tier-1-badge { background: linear-gradient(135deg, #10b981, #059669); }
+        .tier-2-badge { background: linear-gradient(135deg, #f59e0b, #d97706); }
+        .tier-3-badge { background: linear-gradient(135deg, #ef4444, #dc2626); }
+        .tier-4-badge { background: linear-gradient(135deg, #8b5cf6, #6d28d9); }
+
+        .tier-heading {
+            margin: 0 0 4px;
+            font-family: var(--font-display);
+            font-size: clamp(1.3rem, 2.8vw, 1.7rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        .tier-desc {
+            margin: 0;
+            color: var(--muted);
+            font-size: 14px;
+            max-width: 65ch;
+        }
+        .tier-meta-pill {
+            padding: 5px 12px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 600;
+            background: var(--surface-2);
+            border: 1px solid var(--line);
+            color: var(--muted);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Linked List Layout */
+        .ll-grid {
+            --gap: 52px;
+            --gap-y: 46px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+            column-gap: var(--gap);
+            row-gap: var(--gap-y);
+            padding: 16px 2px 4px;
+            position: relative;
+        }
+
+        /* A node: [ data | next-pointer ] */
+        .node-card {
+            --arrow: color-mix(in srgb, var(--accent) 38%, var(--line));
+            position: relative;
+            display: flex;
+            align-items: stretch;
+            min-height: 74px;
+            background: var(--surface-2);
+            border: 1.5px solid var(--line);
+            border-radius: 14px;
+            cursor: pointer;
+            outline: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        }
+        .node-card.rev { flex-direction: row-reverse; }
+        .node-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px var(--accent-soft);
+        }
+        .node-card:focus-visible {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px var(--accent-soft);
+        }
+        .node-data {
+            flex: 1;
+            min-width: 0;
+            padding: 12px 14px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 7px;
+        }
+        .node-title {
+            margin: 0;
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: -0.012em;
+            line-height: 1.25;
+            color: var(--ink);
+        }
+
+        /* Importance */
+        .imp-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 11.5px;
+            font-weight: 600;
+            color: var(--muted);
+            line-height: 1;
+        }
+        .imp-bars { display: inline-flex; align-items: flex-end; gap: 2px; height: 11px; }
+        .imp-bars i {
+            width: 3.5px;
+            border-radius: 2px;
+            background: var(--line);
+        }
+        .imp-bars i:nth-child(1) { height: 4px; }
+        .imp-bars i:nth-child(2) { height: 6.5px; }
+        .imp-bars i:nth-child(3) { height: 9px; }
+        .imp-bars i:nth-child(4) { height: 11px; }
+        .imp-bars i.on { background: var(--accent); }
+        .imp-critical .imp-badge { color: var(--accent); }
+        .imp-critical .imp-bars i.on { box-shadow: 0 0 6px color-mix(in srgb, var(--accent) 55%, transparent); }
+        .imp-high .imp-badge { color: color-mix(in srgb, var(--accent) 70%, var(--muted)); }
+
+        /* Next-pointer cell (also the "mark complete" toggle) */
+        .node-ptr {
+            width: 38px;
+            pointer-events: none;
+            flex-shrink: 0;
+            display: grid;
+            place-items: center;
+            padding: 0;
+            border: 0;
+            border-left: 1.5px dashed var(--line);
+            border-radius: 0 12px 12px 0;
+            background: transparent;
+            cursor: pointer;
+            outline: none;
+        }
+        .node-card.rev .node-ptr {
+            border-left: 0;
+            border-right: 1.5px dashed var(--line);
+            border-radius: 12px 0 0 12px;
+        }
+        .ptr-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: color-mix(in srgb, var(--accent) 70%, var(--line));
+        }
+
+        /* BOSS node (last in the list) */
+        .boss-tag {
+            display: none;
+            position: absolute;
+            top: -10px;
+            right: 14px;
+            padding: 2px 9px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #ff9a1f, #ff3d00);
+            color: #fff;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            z-index: 2;
+        }
+        .node-card.is-boss .boss-tag { display: block; }
+        .node-card.is-boss .node-ptr { display: none; }
+        .node-card.is-boss {
+            border-color: #ff8a2b;
+            background: linear-gradient(180deg, color-mix(in srgb, #ff7a1a 16%, var(--surface-2)), var(--surface-2) 70%);
+            animation: bossGlow 1.5s ease-in-out infinite alternate;
+        }
+        .node-card.is-boss:hover { border-color: #ffb347; }
+        .node-card.is-boss .node-data { padding-right: 18px; }
+        .node-card.is-boss .imp-badge { color: #ff8a2b; }
+        @keyframes bossGlow {
+            from { box-shadow: 0 0 0 1px rgba(255, 138, 43, 0.35), 0 0 14px rgba(255, 110, 20, 0.32), 0 0 30px rgba(255, 70, 0, 0.14); }
+            to   { box-shadow: 0 0 0 1px rgba(255, 138, 43, 0.55), 0 0 22px rgba(255, 110, 20, 0.5),  0 0 50px rgba(255, 70, 0, 0.26); }
+        }
+
+        /* HEAD marker */
+        .head-tag {
+            display: none;
+            position: absolute;
+            top: -10px;
+            left: 14px;
+            padding: 2px 8px;
+            border-radius: 999px;
+            background: var(--accent);
+            color: var(--on-accent);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.09em;
+        }
+        .node-card.is-head .head-tag { display: block; }
+
+        /* Arrows (pointer links) */
+        .node-card.link-side::after,
+        .node-card.link-side::before,
+        .node-card.link-down::after,
+        .node-card.link-down::before {
+            content: "";
+            position: absolute;
+            pointer-events: none;
+        }
+        /* → rightwards */
+        .node-card.link-side::after {
+            top: 50%; left: 100%;
+            width: var(--gap); height: 2px; margin-top: -1px;
+            background: var(--arrow);
+        }
+        .node-card.link-side::before {
+            top: 50%; left: calc(100% + var(--gap) - 9px); margin-top: -6px;
+            border-left: 9px solid var(--arrow);
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+        }
+        /* ← leftwards (snake rows) */
+        .node-card.link-side.rev::after { left: auto; right: 100%; }
+        .node-card.link-side.rev::before {
+            left: auto; right: calc(100% + var(--gap) - 9px);
+            border-left: 0;
+            border-right: 9px solid var(--arrow);
+        }
+        /* ↓ downwards (row end) */
+        .node-card.link-down::after {
+            top: 100%; left: calc(100% - 19px); margin-left: -1px;
+            width: 2px; height: var(--gap-y);
+            background: var(--arrow);
+        }
+        .node-card.link-down::before {
+            top: calc(100% + var(--gap-y) - 9px); left: calc(100% - 19px); margin-left: -6px;
+            border-top: 9px solid var(--arrow);
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+        }
+        .node-card.link-down.rev::after,
+        .node-card.link-down.rev::before { left: 19px; }
+
+        /* Importance legend */
+        .ll-legend {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 10px 22px;
+            margin: -12px 0 32px;
+            color: var(--muted);
+            font-size: 12.5px;
+        }
+        .ll-legend .imp-badge { font-size: 12.5px; }
+        .ll-legend-sep { width: 1px; height: 14px; background: var(--line); }
+        .ll-legend .ptr-dot { width: 14px; height: 14px; display: inline-grid; vertical-align: middle; margin-right: 6px; }
+
+        /* Connector Line between Tiers */
+        .tier-connector {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            margin: -20px auto;
+            position: relative;
+            z-index: 2;
+        }
+        .connector-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 2px solid var(--surface);
+            box-shadow: 0 0 10px var(--accent);
+        }
+        .connector-line {
+            width: 2px;
+            height: 38px;
+            background: linear-gradient(180deg, var(--accent), var(--line));
+        }
+
+        /* Quick FAQ Section */
+        .faq-section {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid var(--line);
+        }
+        .faq-header { margin-bottom: 24px; }
+        .faq-heading {
+            margin: 0 0 8px;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.8rem;
+        }
+        .faq-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .faq-item {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 16px 20px;
+            box-shadow: var(--shadow);
+        }
+        .faq-item[open] { border-color: var(--accent); }
+        .faq-question {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            user-select: none;
+            list-style: none;
+        }
+        .faq-question::-webkit-details-marker { display: none; }
+        .faq-chevron {
+            color: var(--muted);
+            transition: transform 0.2s ease;
+        }
+        .faq-item[open] .faq-chevron {
+            transform: rotate(180deg);
+            color: var(--accent);
+        }
+        .faq-answer {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid var(--line);
+            color: var(--muted);
+            font-size: 14.5px;
+            line-height: 1.6;
+        }
+
+        /* Toast notification */
+        .toast-notify {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: var(--ink);
+            color: var(--bg);
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-size: 13.5px;
+            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: transform 0.3s cubic-bezier(0.2, 0, 0, 1), opacity 0.3s ease;
+            z-index: 1000;
+            pointer-events: none;
+        }
+        .toast-notify.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Site Footer */
+        .site-footer {
+            width: min(1400px, 100%);
+            margin: 60px auto 0;
+            padding: 0 clamp(16px, 2.5vw, 32px) 36px;
+        }
+        .footer-inner {
+            border-top: 1px solid var(--line);
+            padding-top: 48px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.3fr;
+            gap: 40px 32px;
+            margin-bottom: 48px;
+        }
+        .footer-brand-col {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .footer-brand {
+            display: inline-flex;
+            line-height: 0;
+        }
+        .footer-brand .brand-logo {
+            height: 34px;
+            width: auto;
+        }
+        .footer-tagline {
+            margin: 0;
+            max-width: 38ch;
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--muted);
+        }
+        .footer-col-title {
+            margin: 0 0 16px;
+            font-family: var(--font-display);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--ink);
+        }
+        .footer-nav-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .footer-nav-list a {
+            color: var(--muted);
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.2s ease, transform 0.2s ease;
+            display: inline-block;
+        }
+        .footer-nav-list a:hover {
+            color: var(--accent);
+            transform: translateX(3px);
+        }
+        .creator-card {
+            padding: 16px;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .creator-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .creator-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--accent-soft);
+            border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+            color: var(--accent);
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 14px;
+            display: grid;
+            place-items: center;
+        }
+        .creator-name {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--ink);
+            line-height: 1.2;
+        }
+        .creator-handle {
+            font-size: 12px;
+            color: var(--muted);
+        }
+        .creator-links {
+            display: flex;
+            gap: 8px;
+        }
+        .creator-social-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+            background: var(--surface-2);
+            border: 1px solid var(--line);
+            color: var(--muted);
+            text-decoration: none;
+            transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+        }
+        .creator-social-btn:hover {
+            background: var(--accent-soft);
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+        .footer-bottom {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding-top: 24px;
+            border-top: 1px solid var(--line);
+            font-size: 13px;
+            color: var(--muted);
+        }
+        .footer-bottom-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .footer-copy strong { color: var(--ink); }
+        .footer-disclaimer { font-size: 12px; opacity: 0.8; }
+        .back-to-top {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 999px;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            color: var(--muted);
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+        }
+        .back-to-top:hover {
+            background: var(--accent-soft);
+            border-color: var(--accent);
+            color: var(--ink);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 992px) {
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px 24px; }
+            .footer-brand-col { grid-column: 1 / -1; }
+        }
+        @media (max-width: 768px) {
+            .controls-row { flex-direction: column; align-items: stretch; }
+            .search-box-wrap { max-width: 100%; }
+            .tier-tabs { width: 100%; }
+            .progress-box { width: 100%; }
+        }
+        @media (max-width: 680px) {
+            .topbar { padding: 8px clamp(12px, 2.5vw, 20px); gap: 8px; }
+            .brand-logo { height: 32px !important; }
+            .github-star-btn .github-text { display: none; }
+            .github-star-btn { padding: 7px; width: 34px; height: 34px; justify-content: center; }
+            .nav a { padding: 5px 9px; font-size: 12.5px; gap: 4px; }
+            .nav-icon { width: 13px; height: 13px; }
+        }
+        @media (max-width: 540px) {
+            .nav a span { display: none; }
+            .nav a { padding: 7px; border-radius: 50%; }
+            .nav-icon { width: 15px; height: 15px; }
+            .topbar-divider { display: none; }
+            .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+            .footer-bottom { flex-direction: column; align-items: flex-start; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            * { transition: none !important; animation: none !important; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header" id="top">
+    <div class="topbar">
+        <a class="brand" href="/" aria-label="LeetNode home">
+            <img th:src="@{/images/leetnode-logo-light.svg}" src="/images/leetnode-logo-light.svg"
+                 alt="LeetNode" class="brand-logo logo-light">
+            <img th:src="@{/images/leetnode-logo-dark.svg}" src="/images/leetnode-logo-dark.svg"
+                 alt="LeetNode" class="brand-logo logo-dark">
+        </a>
+        <div class="topbar-actions">
+            <nav class="nav" aria-label="Main Navigation">
+                <a href="/rating" th:href="@{/rating}">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M12 14l4-4"/><path d="M3.3 17a9 9 0 1 1 17.4 0"/>
+                    </svg>
+                    <span>Predict rating</span>
+                </a>
+                <a href="/profile" th:href="@{/profile}">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                    </svg>
+                    <span>Recommendations</span>
+                </a>
+                <a href="/filter" th:href="@{/filter}">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+                    </svg>
+                    <span>Filter</span>
+                </a>
+                <a href="/roadmap" th:href="@{/roadmap}" aria-current="page">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="12" r="3"/>
+                        <line x1="8.5" y1="7.5" x2="15.5" y2="10.5"/><line x1="8.5" y1="16.5" x2="15.5" y2="13.5"/>
+                    </svg>
+                    <span>Roadmap</span>
+                </a>
+            </nav>
+            <div class="topbar-divider" aria-hidden="true"></div>
+            <a class="github-star-btn" href="https://github.com/Sreecharan1703/Leetcode_Rating_Predictor" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository" title="Star LeetNode on GitHub">
+                <svg class="github-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+                <span class="github-text">Star</span>
+            </a>
+            <button id="themeToggleBtn" class="theme-toggle-btn" type="button" aria-label="Toggle theme" title="Toggle theme">
+                <svg class="theme-toggle-icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="4.5" fill="currentColor"/>
+                    <line x1="12" y1="2" x2="12" y2="4.2"/>
+                    <line x1="12" y1="19.8" x2="12" y2="22"/>
+                    <line x1="4.93" y1="4.93" x2="6.48" y2="6.48"/>
+                    <line x1="17.52" y1="17.52" x2="19.07" y2="19.07"/>
+                    <line x1="2" y1="12" x2="4.2" y2="12"/>
+                    <line x1="19.8" y1="12" x2="22" y2="12"/>
+                    <line x1="4.93" y1="19.07" x2="6.48" y2="17.52"/>
+                    <line x1="17.52" y1="6.48" x2="19.07" y2="4.93"/>
+                </svg>
+                <svg class="theme-toggle-icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="roadmap-container">
+        <!-- Hero Header -->
+        <div class="roadmap-hero">
+            <h1 class="roadmap-title">Data Structures &amp; Algorithms Roadmap</h1>
+            <p class="roadmap-subtitle">
+                A structured, step-by-step master path from fundamental arrays to advanced dynamic programming and graph theory. Click any topic to jump directly to its curated LeetCode problem set.
+            </p>
+        </div>
+
+        <!-- Progress Tracker & Stats Bar -->
+        <div class="roadmap-stats-bar">
+            <div class="stats-group">
+                <div class="stat-item">
+                    <div class="stat-icon" aria-hidden="true">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <div>
+                        <div class="stat-value" id="totalTopicsCount">30</div>
+                        <div class="stat-label">Core Topics</div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon" aria-hidden="true">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <div>
+                        <div class="stat-value">4 Tiers</div>
+                        <div class="stat-label">Beginner to Master</div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon" aria-hidden="true">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    </div>
+                    <div>
+                        <div class="stat-value">Direct Practice</div>
+                        <div class="stat-label">LeetCode Problem Lists</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls: Search & Tier Filter Tabs -->
+        <div class="controls-row">
+
+            <div class="tier-tabs" role="tablist">
+                <button type="button" class="tier-tab active" data-filter="all">All Tiers</button>
+                <button type="button" class="tier-tab" data-filter="tier-1">Level 1: Beginner</button>
+                <button type="button" class="tier-tab" data-filter="tier-2">Level 2: Intermediate</button>
+                <button type="button" class="tier-tab" data-filter="tier-3">Level 3: Advanced</button>
+                <button type="button" class="tier-tab" data-filter="tier-4">Level 4: Master</button>
+            </div>
+        </div>
+
+        <!-- Importance legend -->
+        <div class="ll-legend" aria-label="Legend">
+            <span class="imp-badge imp-critical"><span class="imp-bars"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>Critical</span>
+            <span class="imp-badge imp-high"><span class="imp-bars"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span>High</span>
+            <span class="imp-badge"><span class="imp-bars"><i class="on"></i><i class="on"></i><i></i><i></i></span>Medium</span>
+            <span class="imp-badge"><span class="imp-bars"><i class="on"></i><i></i><i></i><i></i></span>Bonus</span>
+        </div>
+
+        <!-- Roadmap Tree Structure -->
+        <div class="roadmap-tree" id="roadmapTree">
+
+            <!-- ===================== TIER 1: BEGINNER ===================== -->
+            <section class="tier-section" id="tier-1" data-tier="tier-1">
+                <div class="tier-header">
+                    <div class="tier-title-group">
+                        <div class="tier-number-badge tier-1-badge">1</div>
+                        <div>
+                            <h2 class="tier-heading">Level 1: Foundations &amp; Linear Data Structures</h2>
+                            <p class="tier-desc">Master programming basics, asymptotic time &amp; space complexity, two-pointer traversals, sliding window techniques, and binary search fundamentals.</p>
+                        </div>
+                    </div>
+                    <span class="tier-meta-pill">Target Elo: 1200 – 1500 · 8 Topics</span>
+                </div>
+
+                <div class="ll-grid">
+                    <div class="node-card imp-critical" role="link" tabindex="0" data-topic="time-complexity" data-slug="simulation" href="https://leetcode.com/problem-list/simulation">
+                        <span class="head-tag" aria-hidden="true">HEAD</span>
+                        <span class="boss-tag" aria-hidden="true">BOSS</span>
+                        <div class="node-data">
+                            <h3 class="node-title">Time &amp; Space Complexity</h3>
+                            <span class="imp-badge" title="Importance: Critical"><span class="imp-bars" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>Critical</span>
+                        </div>
+                        <span class="node-ptr" aria-hidden="true"><span class="ptr-dot"></span></span>
+                    </div>
+                    <div class="node-card imp-critical" role="link" tabindex="0" data-topic="arrays" data-slug="array" href="https://leetcode.com/problem-list/array">
+                        <span class="head-tag" aria-hidden="true">HEAD</span>
+                        <span class="boss-tag" aria-hidden="true">BOSS</span>
+                        <div class="node-data">
+                            <h3 class="node-title">Arrays &amp; Dynamic Arrays</h3>
+                            <span class="imp-badge" title="Importance: Critical"><span class="imp-bars" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>Critical</span>
+                        </div>
+                        <span class="node-ptr" aria-hidden="true"><span class="ptr-dot"></span></span>
+                    </div>
+                    <div class="node-card imp-critical" role="link" tabindex="0" data-topic="strings" data-slug="string" href="https://leetcode.com/problem-list/string">
+                        <span class="head-tag" aria-hidden="true">HEAD</span>
+                        <span class="boss-tag" aria-hidden="true">BOSS</span>
+                        <div class="node-data">
+                            <h3 class="node-title">Strings</h3>
+                            <span class="imp-badge" title="Importance: Critical"><span class="imp-bars" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>Critical</span>
+                        </div>
+                        <span class="node-ptr" aria-hidden="true"><span class="ptr-dot"></span></span>
+                    </div>
+                    <div class="node-card imp-critical" role="link" tabindex="0" data-topic="hashing" data-slug="hash-table" href="https://leetcode.com/problem-list/hash-table">
+                        <span class="head-tag" aria-hidden="true">HEAD</span>
+                        <span class="boss-tag" aria-hidden="true">BOSS</span>
+                        <div class="node-data">
+                            <h3 class="node-title">Hash Table &amp; Hashing</h3>
+                            <span class="imp-badge" title="Importance: Critical"><span class="imp-bars" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>Critical</span>
+                        </div>
+                        <span class="node-ptr" aria-hidden="true"><span class="ptr-dot"></span></span>
+                    </div>
+                    <div class="node-card imp-high" role="link" tabindex="0" data-topic="two-pointers" data-slug="two-pointers" href="https://leetcode.com/problem-list/two-pointers">
+                        <span class="head-tag" aria-hidden="true">HEAD</span>
+                        <span class="boss-tag" aria-hidden="true">BOSS</span>
+                        <div class="node-data">
+                            <h3 class="node-title">Two Pointers Technique</h3>
+                            <span class="imp-badge" title="Importance: High"><span class="imp-bars" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>High</span>
+                        </div>
+                        <span class="node-ptr" aria-hidden="true"><span class="ptr-dot"></span></span>
+                    </div>
+                    <div class="node-card imp-high" role="link" tabindex="0" data-topic="sliding-window" data-slug="sliding-window" href="https://leetcode.com/problem-list/sliding-window">
+                        <span class="head-tag" aria-hidden="true">HEAD</span>
+                        <span class="boss-tag" aria-hidden="true">BOSS</span>
+                        <div class="node-data">
+                            <h3 class="node-title">Sliding Window</h3>
+                            <span class="imp-badge" title="Importance: High"><span class="imp-bars" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>High</span>
+                        </div>
+                        <span class="node-ptr" aria-hidden="true"><span class="ptr-dot"></span></span>
+                    </div>
+                    <div class="node-card imp-high" role="link" tabindex="0" data-topic="sorting" data-slug="sorting" href="https://leetcode.com/problem-list/sorting">
+                        <span class="head-tag" aria-hidden="true">HEAD</span>
+                        <span class="boss-tag" aria-hidden="true">BOSS</span>
+                        <div class="node-data">
+                            <h3 class="node-title">Searching &amp; Sorting</h3>
+                            <span class="imp-badge" title="Importance: High"><span class="imp-bars" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>High</span>
+                        </div>
+                        <span class="node-ptr" aria-hidden="true"><span class="ptr-dot"></span></span>
+                    </div>
+                    <div class="node-card imp-critical" role="link" tabindex="0" data-topic="binary-search" data-slug="binary-search" href="https://leetcode.com/problem-list/binary-search">
+                        <span class="head-tag" aria-hidden="true">HEAD</span>
+                        <span class="boss-tag" aria-hidden="true">BOSS</span>
+                        <div class="node-data">
+                            <h3 class="node-title">Binary Search</h3>
+                            <span class="imp-badge" title="Importance: Critical"><span class="imp-bars" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>Critical</span>
+                        </div>
+                        <span class="node-ptr" aria-hidden="true"><span class="ptr-dot"></span></span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Connector Line -->
+            <div class="tier-connector" aria-hidden="true">
+                <span class="connector-dot"></span>
+                <span class="connector-line"></span>
+                <span class="connector-dot"></span>
+            </div>
+
+            <!-- ===================== TIER 2: INTERMEDIATE ===================== -->
+            <section class="tier-section" id="tier-2" data-tier="tier-2">
+                <div class="tier-header">
+                    <div class="tier-title-group">
+                        <div class="tier-number-badge tier-2-badge">2</div>
+                        <div>
+                            <h2 class="tier-heading">Level 2: Non-Linear &amp; Classic Problem Solving</h2>
+                            <p class="tier-desc">Master 2D matrices, linked list pointers, LIFO/FIFO stacks and queues, recursive exploration, backtracking search, and heap priority queues.</p>
+                        </div>
+                    </div>
+                    <span class="tier-meta-pill">Target Elo: 1500 – 1800 · 8 Topics</span>
+                </div>
+
+                <div class="ll-grid">
+                    <div class="node-card imp-medium" role="link" tabindex="0" data-topic="matrix" data-slug="matrix" href="https://leetcode.com/problem-list/matrix">
+                        <span class="head-tag" aria-hidden="true">HEAD</span>
+                        <span class="boss-tag" aria-hidden="true">BOSS</span>
+                        <div class="node-data">
+                            <h3 class="node-title">2D Arrays &amp; Matrix</h3>
+                            <span class="imp-badge" title="Importance: Medium"><span class="imp-bars" aria-hidden="true"><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>Medium</span>
+                        </div>
+                        <span class="node-ptr" aria-hidden="true"><span class="ptr-dot"></span></span>
+                    </div>
+                    <div class="node-card imp-high" role="link" tabindex="0" data-topic="linked-list" data-slug="linked-list" href="https://leetcode.com/problem-list/linked-list">
+                        <span class="head-tag" aria-hidden="true">HEAD</span>
+                        <span class="boss-tag" aria-hidden="true">BOSS</span>
+                        <div class="node-data">
+                            <h3 class="node-title">Linked Lists</h3>
+                            <span class="imp-badge" title="Importance: High"><span class="imp-bars" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>High</span>
+                        </div>
+                        <span class="node-ptr" aria-hidden="true"><span class="ptr-dot"></span></span>
+                    </div>
+                    <div class="node-card imp-high" role="link" tabindex="0" data-topic="stack" data-slug="stack" href="https://leetcode.com/problem-list/stack">
+                        <span class="head-tag" aria-hidden="true">HEAD</span>
+                        <span class="boss-tag" aria-hidden="true">BOSS</span>
+                        <div class="node-data">
+                            <h3 class="node-title">Stack &amp; Monotonic Stack</h3>
+                            <span class="imp-badge" title="Importance: High"><span class="imp-bars" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>High</span>
+                        </div>
+                        <span class="node-ptr" aria-hidden="true"><span class="ptr-dot"></span></span>
+                    </div>
+                    <div class="node-card imp-medium" role="link" tabindex="0" data-topic="queue" data-slug="queue" href="https://leetcode.com/problem-list/queue">
+                        <span class="head-tag" aria-hidden="true">HEAD</span>
+                        <span class="boss-tag" aria-hidden="true">BOSS</span>
+                        <div class="node-data">
+                            <h3 class="node-title">Queue &amp; Deque</h3>
+                            <span class="imp-badge" title="Importance: Medium"><span class="imp-bars" aria-hidden="true"><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>Medium</span>
+                        </div>
+                        <span class="node-ptr" aria-hidden="true"><span class="ptr-dot"></span></span>
+                    </div>
+                    <div class="node-card imp-high" role="link" tabindex="0" data-topic="backtracking" data-slug="backtracking" href="https://leetcode.com/problem-list/backtracking">
+                        <span class="head-tag" aria-hidden="true">HEAD</span>
+                        <span class="boss-tag" aria-hidden="true">BOSS</span>
+                        <div class="node-data">
+                            <h3 class="node-title">Recursion &amp; Backtracking</h3>
+                            <span class="imp-badge" title="Importance: High"><span class="imp-bars" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>High</span>
+                        </div>
+                        <span class="node-ptr" aria-hidden="true"><span class="ptr-dot"></span></span>
+                    </div>
+                    <div class="node-card imp-high" role="link" tabindex="0" data-topic="heap" data-slug="heap-priority-queue" href="https://leetcode.com/problem-list/heap-priority-queue">
+                        <span class="head-tag" aria-hidden="true">HEAD</span>
+                        <span class="boss-tag" aria-hidden="true">BOSS</span>
+                        <div class="node-data">
+                            <h3 class="node-title">Heaps &amp; Priority Queue</h3>
+                            <span class="imp-badge" title="Importance: High"><span class="imp-bars" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>High</span>
+                        </div>
+                        <span class="node-ptr" aria-hidden="true"><span class="ptr-dot"></span></span>
+                    </div>
+                    <div class="node-card imp-high" role="link" tabindex="0" data-topic="greedy" data-slug="greedy" href="https://leetcode.com/problem-list/greedy">
+                        <span class="head-tag" aria-hidden="true">HEAD</span>
+                        <span class="boss-tag" aria-hidden="true">BOSS</span>
+                        <div class="node-data">
+                            <h3 class="node-title">Greedy Algorithms</h3>
+                            <span class="imp-badge" title="Importance: High"><span class="imp-bars" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>High</span>
+                        </div>
+                        <span class="node-ptr" aria-hidden="true"><span class="ptr-dot"></span></span>
+                    </div>
+                    <div class="node-card imp-medium" role="link" tabindex="0" data-topic="divide-and-conquer" data-slug="divide-and-conquer" href="https://leetcode.com/problem-list/divide-and-conquer">
+                        <span class="head-tag" aria-hidden="true">HEAD</span>
+                        <span class="boss-tag" aria-hidden="true">BOSS</span>
+                        <div class="node-data">
+                            <h3 class="node-title">Divide and Conquer</h3>
+                            <span class="imp-badge" title="Importance: Medium"><span class="imp-bars" aria-hidden="true"><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>Medium</span>
+                        </div>
+                        <span class="node-ptr" aria-hidden="true"><span class="ptr-dot"></span></span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Connector Line -->
+            <div class="tier-connector" aria-hidden="true">
+                <span class="connector-dot"></span>
+                <span class="connector-line"></span>
+                <span class="connector-dot"></span>
+            </div>
+
+            <!-- ===================== TIER 3: ADVANCED ===================== -->
+            <section class="tier-section" id="tier-3" data-tier="tier-3">
+                <div class="tier-header">
+                    <div class="tier-title-group">
+                        <div class="tier-number-badge tier-3-badge">3</div>
+                        <div>
+                            <h2 class="tier-heading">Level 3: Trees, Graphs &amp; Dynamic Programming</h2>
+                            <p class="tier-desc">Master hierarchical binary trees, graph traversals (BFS/DFS), topological ordering, shortest path algorithms, and multidimensional dynamic programming.</p>
+                        </div>
+                    </div>
+                    <span class="tier-meta-pill">Target Elo: 1800 – 2100 · 7 Topics</span>
+                </div>
+
+                <div class="ll-grid">
+                    <div class="node-card imp-critical" role="link" tabindex="0" data-topic="tree" data-slug="tree" href="https://leetcode.com/problem-list/tree">
+                        <span class="head-tag" aria-hidden="true">HEAD</span>
+                        <span class="boss-tag" aria-hidden="true">BOSS</span>
+                        <div class="node-data">
+                            <h3 class="node-title">Binary Trees</h3>
+                            <span class="imp-badge" title="Importance: Critical"><span class="imp-bars" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>Critical</span>
+                        </div>
+                        <span class="node-ptr" aria-hidden="true"><span class="ptr-dot"></span></span>
+                    </div>
+                    <div class="node-card imp-medium" role="link" tabindex="0" data-topic="binary-search-tree" data-slug="binary-search-tree" href="https://leetcode.com/problem-list/binary-search-tree">
+                        <span class="head-tag" aria-hidden="true">HEAD</span>
+                        <span class="boss-tag" aria-hidden="true">BOSS</span>
+                        <div class="node-data">
+                            <h3 class="node-title">Binary Search Tree (BST)</h3>
+                            <span class="imp-badge" title="Importance: Medium"><span class="imp-bars" aria-hidden="true"><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>Medium</span>
+                        </div>
+                        <span class="node-ptr" aria-hidden="true"><span class="ptr-dot"></span></span>
+                    </div>
+                    <div class="node-card imp-critical" role="link" tabindex="0" data-topic="graphs" data-slug="graph" href="https://leetcode.com/problem-list/graph">
+                        <span class="head-tag" aria-hidden="true">HEAD</span>
+                        <span class="boss-tag" aria-hidden="true">BOSS</span>
+                        <div class="node-data">
+                            <h3 class="node-title">Graphs (BFS &amp; DFS)</h3>
+                            <span class="imp-badge" title="Importance: Critical"><span class="imp-bars" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>Critical</span>
+                        </div>
+                        <span class="node-ptr" aria-hidden="true"><span class="ptr-dot"></span></span>
+                    </div>
+                    <div class="node-card imp-medium" role="link" tabindex="0" data-topic="topological-sort" data-slug="topological-sort" href="https://leetcode.com/problem-list/topological-sort">
+                        <span class="head-tag" aria-hidden="true">HEAD</span>
+                        <span class="boss-tag" aria-hidden="true">BOSS</span>
+                        <div class="node-data">
+                            <h3 class="node-title">Topological Sort</h3>
+                            <span class="imp-badge" title="Importance: Medium"><span class="imp-bars" aria-hidden="true"><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>Medium</span>
+                        </div>
+                        <span class="node-ptr" aria-hidden="true"><span class="ptr-dot"></span></span>
+                    </div>
+                    <div class="node-card imp-medium" role="link" tabindex="0" data-topic="shortest-path" data-slug="shortest-path" href="https://leetcode.com/problem-list/shortest-path">
+                        <span class="head-tag" aria-hidden="true">HEAD</span>
+                        <span class="boss-tag" aria-hidden="true">BOSS</span>
+                        <div class="node-data">
+                            <h3 class="node-title">Shortest Path Algorithms</h3>
+                            <span class="imp-badge" title="Importance: Medium"><span class="imp-bars" aria-hidden="true"><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>Medium</span>
+                        </div>
+                        <span class="node-ptr" aria-hidden="true"><span class="ptr-dot"></span></span>
+                    </div>
+                    <div class="node-card imp-critical" role="link" tabindex="0" data-topic="dynamic-programming" data-slug="dynamic-programming" href="https://leetcode.com/problem-list/dynamic-programming">
+                        <span class="head-tag" aria-hidden="true">HEAD</span>
+                        <span class="boss-tag" aria-hidden="true">BOSS</span>
+                        <div class="node-data">
+                            <h3 class="node-title">Dynamic Programming</h3>
+                            <span class="imp-badge" title="Importance: Critical"><span class="imp-bars" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>Critical</span>
+                        </div>
+                        <span class="node-ptr" aria-hidden="true"><span class="ptr-dot"></span></span>
+                    </div>
+                    <div class="node-card imp-high" role="link" tabindex="0" data-topic="knapsack-subsequences" data-slug="dynamic-programming" href="https://leetcode.com/problem-list/dynamic-programming">
+                        <span class="head-tag" aria-hidden="true">HEAD</span>
+                        <span class="boss-tag" aria-hidden="true">BOSS</span>
+                        <div class="node-data">
+                            <h3 class="node-title">2D DP &amp; Subsequences</h3>
+                            <span class="imp-badge" title="Importance: High"><span class="imp-bars" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>High</span>
+                        </div>
+                        <span class="node-ptr" aria-hidden="true"><span class="ptr-dot"></span></span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Connector Line -->
+            <div class="tier-connector" aria-hidden="true">
+                <span class="connector-dot"></span>
+                <span class="connector-line"></span>
+                <span class="connector-dot"></span>
+            </div>
+
+            <!-- ===================== TIER 4: EXPERT / MASTER ===================== -->
+            <section class="tier-section" id="tier-4" data-tier="tier-4">
+                <div class="tier-header">
+                    <div class="tier-title-group">
+                        <div class="tier-number-badge tier-4-badge">4</div>
+                        <div>
+                            <h2 class="tier-heading">Level 4: Advanced Data Structures &amp; Master Algorithms</h2>
+                            <p class="tier-desc">Specialized data structures and contest Q4 paradigms: Disjoint Set Union (DSU), Trie prefix trees, Bit Manipulation, Segment Trees, Number Theory, and Combinatorics.</p>
+                        </div>
+                    </div>
+                    <span class="tier-meta-pill">Target Elo: 2100+ (Guardian) · 7 Topics</span>
+                </div>
+
+                <div class="ll-grid">
+                    <div class="node-card imp-medium" role="link" tabindex="0" data-topic="union-find" data-slug="union-find" href="https://leetcode.com/problem-list/union-find">
+                        <span class="head-tag" aria-hidden="true">HEAD</span>
+                        <span class="boss-tag" aria-hidden="true">BOSS</span>
+                        <div class="node-data">
+                            <h3 class="node-title">Disjoint Set Union (DSU)</h3>
+                            <span class="imp-badge" title="Importance: Medium"><span class="imp-bars" aria-hidden="true"><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>Medium</span>
+                        </div>
+                        <span class="node-ptr" aria-hidden="true"><span class="ptr-dot"></span></span>
+                    </div>
+                    <div class="node-card imp-medium" role="link" tabindex="0" data-topic="bit-manipulation" data-slug="bit-manipulation" href="https://leetcode.com/problem-list/bit-manipulation">
+                        <span class="head-tag" aria-hidden="true">HEAD</span>
+                        <span class="boss-tag" aria-hidden="true">BOSS</span>
+                        <div class="node-data">
+                            <h3 class="node-title">Bit Manipulation</h3>
+                            <span class="imp-badge" title="Importance: Medium"><span class="imp-bars" aria-hidden="true"><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>Medium</span>
+                        </div>
+                        <span class="node-ptr" aria-hidden="true"><span class="ptr-dot"></span></span>
+                    </div>
+                    <div class="node-card imp-medium" role="link" tabindex="0" data-topic="trie" data-slug="trie" href="https://leetcode.com/problem-list/trie">
+                        <span class="head-tag" aria-hidden="true">HEAD</span>
+                        <span class="boss-tag" aria-hidden="true">BOSS</span>
+                        <div class="node-data">
+                            <h3 class="node-title">Trie (Prefix Tree)</h3>
+                            <span class="imp-badge" title="Importance: Medium"><span class="imp-bars" aria-hidden="true"><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>Medium</span>
+                        </div>
+                        <span class="node-ptr" aria-hidden="true"><span class="ptr-dot"></span></span>
+                    </div>
+                    <div class="node-card imp-bonus" role="link" tabindex="0" data-topic="segment-tree" data-slug="segment-tree" href="https://leetcode.com/problem-list/segment-tree">
+                        <span class="head-tag" aria-hidden="true">HEAD</span>
+                        <span class="boss-tag" aria-hidden="true">BOSS</span>
+                        <div class="node-data">
+                            <h3 class="node-title">Segment Tree &amp; Fenwick Tree</h3>
+                            <span class="imp-badge" title="Importance: Bonus"><span class="imp-bars" aria-hidden="true"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span>Bonus</span>
+                        </div>
+                        <span class="node-ptr" aria-hidden="true"><span class="ptr-dot"></span></span>
+                    </div>
+                    <div class="node-card imp-medium" role="link" tabindex="0" data-topic="math" data-slug="math" href="https://leetcode.com/problem-list/math">
+                        <span class="head-tag" aria-hidden="true">HEAD</span>
+                        <span class="boss-tag" aria-hidden="true">BOSS</span>
+                        <div class="node-data">
+                            <h3 class="node-title">Math &amp; Number Theory</h3>
+                            <span class="imp-badge" title="Importance: Medium"><span class="imp-bars" aria-hidden="true"><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>Medium</span>
+                        </div>
+                        <span class="node-ptr" aria-hidden="true"><span class="ptr-dot"></span></span>
+                    </div>
+                    <div class="node-card imp-bonus" role="link" tabindex="0" data-topic="combinatorics" data-slug="combinatorics" href="https://leetcode.com/problem-list/combinatorics">
+                        <span class="head-tag" aria-hidden="true">HEAD</span>
+                        <span class="boss-tag" aria-hidden="true">BOSS</span>
+                        <div class="node-data">
+                            <h3 class="node-title">Combinatorics &amp; Game Theory</h3>
+                            <span class="imp-badge" title="Importance: Bonus"><span class="imp-bars" aria-hidden="true"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span>Bonus</span>
+                        </div>
+                        <span class="node-ptr" aria-hidden="true"><span class="ptr-dot"></span></span>
+                    </div>
+                    <div class="node-card imp-bonus" role="link" tabindex="0" data-topic="advanced-dp" data-slug="dynamic-programming" href="https://leetcode.com/problem-list/dynamic-programming">
+                        <span class="head-tag" aria-hidden="true">HEAD</span>
+                        <span class="boss-tag" aria-hidden="true">BOSS</span>
+                        <div class="node-data">
+                            <h3 class="node-title">Advanced Dynamic Programming</h3>
+                            <span class="imp-badge" title="Importance: Bonus"><span class="imp-bars" aria-hidden="true"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span>Bonus</span>
+                        </div>
+                        <span class="node-ptr" aria-hidden="true"><span class="ptr-dot"></span></span>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- FAQ Section for SEO / User help -->
+        <section class="faq-section" id="faq" aria-labelledby="faq-title">
+            <div class="faq-header">
+                <h2 id="faq-title" class="faq-heading">Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-grid">
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <span>How is this DSA Roadmap structured?</span>
+                        <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>The roadmap follows a natural difficulty progression divided into 4 tiers: Level 1 (Foundations &amp; Linear Structures), Level 2 (Non-Linear Structures &amp; Problem Solving), Level 3 (Trees, Graphs &amp; Dynamic Programming), and Level 4 (Advanced Data Structures &amp; Master Algorithms). You can follow it linearly or focus on specific weak spots.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <span>What happens when I click on a roadmap item?</span>
+                        <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Clicking any node in the list instantly opens the official LeetCode problem list for that topic (e.g. Dynamic Programming redirects to <code>https://leetcode.com/problem-list/dynamic-programming</code>) in a new tab so you can start solving right away.</p>
+                    </div>
+                </details>
+
+            </div>
+        </section>
+    </div>
+</main>
+
+<!-- Toast for redirect feedback -->
+<div class="toast-notify" id="toastNotify" role="status" aria-live="polite">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+    <span id="toastMsg">Opening LeetCode problem list...</span>
+</div>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <!-- Brand & Mission Column -->
+            <div class="footer-brand-col">
+                <a class="footer-brand" href="/" aria-label="LeetNode home">
+                    <img th:src="@{/images/leetnode-logo-dark.svg}" src="/images/leetnode-logo-dark.svg" alt="LeetNode" class="brand-logo logo-dark" width="130" height="34" />
+                    <img th:src="@{/images/leetnode-logo-light.svg}" src="/images/leetnode-logo-light.svg" alt="LeetNode" class="brand-logo logo-light" width="130" height="34" />
+                </a>
+                <p class="footer-tagline">
+                    Continuous contest difficulty ratings, personalized practice tracks, and targeted problem filters for competitive programmers.
+                </p>
+            </div>
+
+            <!-- Platform Tools Column -->
+            <div class="footer-col">
+                <h3 class="footer-col-title">Platform Tools</h3>
+                <ul class="footer-nav-list">
+                    <li><a href="/rating" th:href="@{/rating}">Rating Predictor</a></li>
+                    <li><a href="/profile" th:href="@{/profile}">Problem Recommendations</a></li>
+                    <li><a href="/filter" th:href="@{/filter}">Rating Range Filter</a></li>
+                    <li><a href="/roadmap" th:href="@{/roadmap}">DSA Roadmap</a></li>
+                    <li><a href="/#faq" th:href="@{/#faq}">Contest Rating FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Practice Bands Column -->
+            <div class="footer-col">
+                <h3 class="footer-col-title">Practice Bands</h3>
+                <ul class="footer-nav-list">
+                    <li><a href="/filter" th:href="@{/filter}">Foundation (1200 – 1400)</a></li>
+                    <li><a href="/filter" th:href="@{/filter}">Intermediate (1400 – 1600)</a></li>
+                    <li><a href="/filter" th:href="@{/filter}">Knight Badge Zone (1600 – 1900)</a></li>
+                    <li><a href="/filter" th:href="@{/filter}">Guardian Elite (1900+)</a></li>
+                </ul>
+            </div>
+
+            <!-- Creator Column -->
+            <div class="footer-col">
+                <h3 class="footer-col-title">Created By</h3>
+                <div class="creator-card">
+                    <div class="creator-meta">
+                        <span class="creator-avatar" aria-hidden="true">SK</span>
+                        <div>
+                            <div class="creator-name">Sreecharan Kesireddy</div>
+                            <div class="creator-handle">Software Engineer</div>
+                        </div>
+                    </div>
+                    <div class="creator-links">
+                        <a href="https://github.com/Sreecharan1703" target="_blank" rel="noopener noreferrer" class="creator-social-btn" title="GitHub Profile" aria-label="GitHub Profile">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/sreecharan-kesireddy" target="_blank" rel="noopener noreferrer" class="creator-social-btn" title="LinkedIn Profile" aria-label="LinkedIn Profile">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                        <a href="https://leetcode.com/u/sreecharan_17" target="_blank" rel="noopener noreferrer" class="creator-social-btn" title="LeetCode Profile" aria-label="LeetCode Profile">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .666-1.607L9.405 7.76l4.079-4.827c.484-.572.417-1.428-.15-1.917A1.375 1.375 0 0 0 13.483 0zm-2.88 7.218a1.38 1.38 0 0 0-.977.404l-5.699 5.699a1.377 1.377 0 0 0 0 1.95 1.38 1.38 0 0 0 1.95 0l5.7-5.7a1.38 1.38 0 0 0-.974-2.353zm4.23 2.18a1.378 1.378 0 0 0-.974.404l-2.84 2.84a1.38 1.38 0 0 0 1.95 1.95l2.84-2.84a1.38 1.38 0 0 0-.976-2.354z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-info">
+                <span class="footer-copy">© 2026 <strong>LeetNode</strong>. Built for competitive programmers worldwide.</span>
+                <span class="footer-disclaimer">LeetNode is an independent analytical tool not affiliated with or endorsed by LeetCode Inc.</span>
+            </div>
+            <button type="button" class="back-to-top" onclick="window.scrollTo({top:0, behavior:'smooth'})" aria-label="Scroll back to top">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
+                <span>Back to top</span>
+            </button>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Theme Toggle Functionality with View Transition API
+    (function setupThemeToggle() {
+        const toggleBtn = document.getElementById('themeToggleBtn');
+        if (!toggleBtn) return;
+
+        function updateAriaLabel(theme) {
+            const nextMode = theme === 'dark' ? 'light' : 'dark';
+            toggleBtn.setAttribute('aria-label', `Switch to ${nextMode} mode`);
+            toggleBtn.setAttribute('title', `Switch to ${nextMode} mode`);
+        }
+
+        const initialTheme = document.documentElement.getAttribute('data-theme') || 'light';
+        updateAriaLabel(initialTheme);
+
+        toggleBtn.addEventListener('click', function(event) {
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 
+                (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (!document.startViewTransition || prefersReducedMotion) {
+                document.documentElement.setAttribute('data-theme', nextTheme);
+                localStorage.setItem('theme', nextTheme);
+                updateAriaLabel(nextTheme);
+                return;
+            }
+
+            const rect = toggleBtn.getBoundingClientRect();
+            const x = event.clientX || (rect.left + rect.width / 2);
+            const y = event.clientY || (rect.top + rect.height / 2);
+
+            const endRadius = Math.hypot(
+                Math.max(x, window.innerWidth - x),
+                Math.max(y, window.innerHeight - y)
+            );
+
+            const transition = document.startViewTransition(() => {
+                document.documentElement.setAttribute('data-theme', nextTheme);
+                localStorage.setItem('theme', nextTheme);
+                updateAriaLabel(nextTheme);
+            });
+
+            transition.ready.then(() => {
+                document.documentElement.animate(
+                    {
+                        clipPath: [
+                            `circle(0px at ${x}px ${y}px)`,
+                            `circle(${endRadius}px at ${x}px ${y}px)`
+                        ]
+                    },
+                    {
+                        duration: 480,
+                        easing: 'cubic-bezier(0.2, 0, 0, 1)',
+                        pseudoElement: '::view-transition-new(root)'
+                    }
+                );
+            });
+        });
+    })();
+
+    // Roadmap Interaction Logic
+    (function setupRoadmapInteractions() {
+        const allCards = document.querySelectorAll('.node-card');
+        const grids = document.querySelectorAll('.ll-grid');
+        const toast = document.getElementById('toastNotify');
+        const toastMsg = document.getElementById('toastMsg');
+        let toastTimeout;
+
+        function showToast(message) {
+            if (toastMsg) toastMsg.textContent = message;
+            if (toast) {
+                toast.classList.add('show');
+                clearTimeout(toastTimeout);
+                toastTimeout = setTimeout(() => toast.classList.remove('show'), 2200);
+            }
+        }
+
+        function openCard(card) {
+            const url = card.getAttribute('href');
+            if (!url) return;
+            showToast(`Redirecting to LeetCode: ${url.replace('https://', '')}`);
+            window.open(url, '_blank', 'noopener,noreferrer');
+        }
+
+        allCards.forEach(card => {
+            card.addEventListener('click', () => openCard(card));
+            card.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    openCard(card);
+                }
+            });
+        });
+
+        // ---- Linked-list layout: snake rows, arrows, HEAD / BOSS ----
+        function layoutGrid(grid) {
+            if (!grid.offsetParent) return; // hidden tier
+            const cols = Math.max(1, getComputedStyle(grid).gridTemplateColumns.split(' ').filter(Boolean).length);
+            const items = Array.from(grid.children).filter(el => el.style.display !== 'none');
+            items.forEach((el, i) => {
+                const row = Math.floor(i / cols);
+                const pos = i % cols;
+                const reversed = cols > 1 && row % 2 === 1;
+                const col = reversed ? cols - 1 - pos : pos;
+                const isLast = i === items.length - 1;
+                const rowEnd = pos === cols - 1;
+                el.style.gridColumn = String(col + 1);
+                el.style.gridRow = String(row + 1);
+                el.classList.toggle('rev', reversed);
+                el.classList.toggle('link-side', !isLast && !rowEnd);
+                el.classList.toggle('link-down', !isLast && rowEnd);
+                el.classList.toggle('is-head', i === 0);
+                el.classList.toggle('is-boss', isLast);
+            });
+        }
+        function layoutAll() { grids.forEach(layoutGrid); }
+
+        if ('ResizeObserver' in window) {
+            const ro = new ResizeObserver(entries => entries.forEach(en => layoutGrid(en.target)));
+            grids.forEach(g => ro.observe(g));
+        } else {
+            window.addEventListener('resize', layoutAll);
+        }
+
+        // Tier Filter Tabs
+        const tabs = document.querySelectorAll('.tier-tab');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                const filter = tab.getAttribute('data-filter');
+                document.querySelectorAll('.tier-section').forEach(section => {
+                    section.style.display = (filter === 'all' || section.id === filter) ? 'block' : 'none';
+                });
+                document.querySelectorAll('.tier-connector').forEach(c => {
+                    c.style.display = filter === 'all' ? 'flex' : 'none';
+                });
+                layoutAll();
+            });
+        });
+
+        layoutAll();
+
+        // Header scroll shadow observer
+        const header = document.querySelector('.site-header');
+        if (header) {
+            window.addEventListener('scroll', () => {
+                header.classList.toggle('scrolled', window.scrollY > 20);
+            }, { passive: true });
+        }
+    })();
+</script>
+
+</body>
+</html>

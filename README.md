@@ -45,6 +45,7 @@ LeetCode shows Easy / Medium / Hard, but inside each of those labels the difficu
 | 🎯 | **Rating predictor** | Enter a LeetCode question number and get its estimated rating, difficulty, acceptance rate, likes, dislikes, submission counts and topic tags. |
 | 🧭 | **Personal recommendations** | Enter your LeetCode username to see your contest stats and a list of problems matched to your rating (from `rating - 50` to `rating + 200`). |
 | 🔎 | **Rating filter** | Pick a rating range and browse every problem inside it, 10 per page. |
+| 🗺️ | **DSA Roadmap** | Interactive curriculum graph from beginner foundations to advanced DP & graphs, with direct links to LeetCode problem lists. |
 | 🔗 | **One-click solve** | Every problem has a **Solve** button that opens it on LeetCode. |
 | 📊 | **View counter** | Total views and views today, stored in the database so restarts don't reset them. |
 | 🌗 | **Light and dark mode** | switch between website themes. |
@@ -148,7 +149,21 @@ The starting point. Choose what you want to do.
 
 ---
 
-### 5. Error page
+### 5. DSA Roadmap
+
+1. Open **DSA Roadmap** from the home page card or top navigation bar.
+2. Follow the 4-tier structured graph:
+   - **Level 1 (Beginner)**: Time & Space Complexity, Arrays, Strings, Hash Tables, Two Pointers, Sliding Window, Sorting, and Binary Search.
+   - **Level 2 (Intermediate)**: 2D Matrix, Linked Lists, Stacks, Queues, Recursion & Backtracking, Heaps, and Greedy Algorithms.
+   - **Level 3 (Advanced)**: Binary Trees, BSTs, Graphs (BFS/DFS), Topological Sort, Shortest Path, and Dynamic Programming.
+   - **Level 4 (Master)**: Disjoint Set Union (DSU), Bit Manipulation, Tries, Segment Trees, Number Theory, and Advanced DP.
+3. **One-Click Redirection**: Click any topic card or its "LeetCode Problem List" button to immediately redirect to LeetCode's curated problem list (e.g. Dynamic Programming -> `https://leetcode.com/problem-list/dynamic-programming`).
+4. **Search & Filter**: Type in the search box to find specific topics or filter by difficulty tier.
+5. **Progress Tracker**: Check off topics as you master them to track your completion percentage in real time.
+
+---
+
+### 6. Error page
 
 If something goes wrong (for example a problem number that doesn't exist), you are taken to a friendly error page that shows what happened and a button back to the search.
 
