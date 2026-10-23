@@ -225,7 +225,7 @@
         }
 
         * { box-sizing: border-box; }
-        html { scroll-behavior: smooth; background: var(--bg); }
+        html { scroll-behavior: smooth; scroll-padding-top: 90px; background: var(--bg); }
 
         body {
             margin: 0;
@@ -691,6 +691,7 @@
             width: min(1400px, 100%);
             margin: 40px auto 70px;
             padding: 0 clamp(16px, 2.5vw, 32px);
+            scroll-margin-top: 90px;
         }
 
         /* Upgraded Footer System */
@@ -1179,7 +1180,7 @@
     </div>
 </div>
 
-<section class="faq-section" aria-labelledby="faq-title" itemscope itemtype="https://schema.org/FAQPage">
+<section class="faq-section" id="faq" aria-labelledby="faq-title" itemscope itemtype="https://schema.org/FAQPage">
     <div class="faq-header">
         <h2 id="faq-title" class="faq-heading">Frequently Asked Questions</h2>
         <p class="faq-sub">Everything you need to know about LeetNode, problem difficulty ratings, and personalized recommendations.</p>

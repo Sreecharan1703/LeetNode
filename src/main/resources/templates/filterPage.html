@@ -170,7 +170,7 @@
 
         * { box-sizing: border-box; }
         [hidden] { display: none !important; }
-        html { scroll-behavior: smooth; background: var(--bg); }
+        html { scroll-behavior: smooth; scroll-padding-top: 90px; background: var(--bg); }
 
         body {
             margin: 0;
@@ -463,7 +463,8 @@
             align-items: center;
         }
         #search { min-height: calc(100vh - 70px); }
-        #result { align-items: flex-start; padding-top: 8px; padding-bottom: 80px; }
+        #result { align-items: flex-start; padding-top: 24px; padding-bottom: 80px; scroll-margin-top: 90px; }
+        #dashboard, .dashboard-container { scroll-margin-top: 90px; }
 
         /* Hero */
         .hero-inner { width: 100%; max-width: 880px; }
@@ -1265,7 +1266,11 @@
             dashboard.style.display = 'block';
             setTimeout(() => {
                 dashboard.classList.add('active');
-                window.location.href = '#result';
+                const header = document.querySelector('.site-header');
+                const headerH = header ? header.offsetHeight : 70;
+                const targetY = dashboard.getBoundingClientRect().top + window.scrollY - headerH - 24;
+                window.scrollTo({ top: Math.max(0, targetY), behavior: 'smooth' });
+                try { history.replaceState(null, '', '#result'); } catch (e) {}
             }, 50);
 
         } catch (error) {
@@ -1297,7 +1302,10 @@
             state.page = targetPage;
             renderQuestions(list);
             updatePager(list);
-            dashboard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            const header = document.querySelector('.site-header');
+            const headerH = header ? header.offsetHeight : 70;
+            const targetY = dashboard.getBoundingClientRect().top + window.scrollY - headerH - 24;
+            window.scrollTo({ top: Math.max(0, targetY), behavior: 'smooth' });
         } catch (error) {
             goToError(error);
         }
@@ -1312,6 +1320,18 @@
             minInput.value = btn.dataset.min;
             maxInput.value = btn.dataset.max;
             form.requestSubmit();
+        });
+    });
+
+    document.querySelectorAll('a[href="#top"]').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            try { history.replaceState(null, '', window.location.pathname); } catch (e) {}
+            const input = document.getElementById('minRange');
+            if (input) {
+                setTimeout(() => { input.focus(); input.select(); }, 350);
+            }
         });
     });
 
