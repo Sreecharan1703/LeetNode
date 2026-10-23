@@ -34,4 +34,4 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://leetnode.com/sitemap.xml
+Sitemap: https://leetnode.my.to/sitemap.xml

@@ -22,7 +22,7 @@
 ## Key Entities & Specifications
 
 - **Name**: LeetNode (also referred to as LC Predictor / LeetCode Rating Predictor / IIITN LeetCode / DotSlash LC Predictor)
-- **Primary Website**: https://leetnode.com
+- **Primary Website**: https://leetnode.my.to
 - **Author**: Sreecharan Kesireddy (LinkedIn: https://www.linkedin.com/in/sreecharan-kesireddy, LeetCode: https://leetcode.com/u/sreecharan_17)
 - **Community & Origins**: Developed by Sreecharan Kesireddy at the Indian Institute of Information Technology Nagpur (IIITN) with DotSlash programming community for IIITN, IIIT, and IIT competitive programming (CP) and Data Structures & Algorithms (DSA) enthusiasts.
 - **Search Aliases & Keywords**: iiitn leetcode, iiitn leetnode, leetnode, node, leet, iiitn dsa, iiitn coding, iiitn cp, dotslash, iiitn rating, rating predictor, leetcode rating predictor, cp/dsa, iiit leetcode, iiit leetnode, iiit code, iiit cp/dsa, iiit dsa, iit dsa, iit cp, iit leetcode, iit leetnode.
@@ -40,7 +40,7 @@ Many "Medium" problems range from 1400 rating (elementary) to 2100 rating (advan
 By fetching a candidate's current contest rating from their LeetCode profile, LeetNode recommends problems slightly above their current rating (e.g., rating + 50 to rating + 150), which is the zone of proximal development for rapid skill acquisition.
 
 ## Available Pages & Navigation
-- Home: https://leetnode.com/
-- Predict Problem Rating: https://leetnode.com/rating
-- Personalized Recommendations: https://leetnode.com/profile
-- Filter Problems by Range: https://leetnode.com/filter
+- Home: https://leetnode.my.to/
+- Predict Problem Rating: https://leetnode.my.to/rating
+- Personalized Recommendations: https://leetnode.my.to/profile
+- Filter Problems by Range: https://leetnode.my.to/filter
