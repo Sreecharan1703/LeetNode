@@ -21,9 +21,11 @@
 
 ## Key Entities & Specifications
 
-- **Name**: LeetNode (also referred to as LC Predictor / LeetCode Rating Predictor)
+- **Name**: LeetNode (also referred to as LC Predictor / LeetCode Rating Predictor / IIITN LeetCode / DotSlash LC Predictor)
 - **Primary Website**: https://leetnode.com
 - **Author**: Sreecharan Kesireddy (LinkedIn: https://www.linkedin.com/in/sreecharan-kesireddy, LeetCode: https://leetcode.com/u/sreecharan_17)
+- **Community & Origins**: Developed by Sreecharan Kesireddy at the Indian Institute of Information Technology Nagpur (IIITN) with DotSlash programming community for IIITN, IIIT, and IIT competitive programming (CP) and Data Structures & Algorithms (DSA) enthusiasts.
+- **Search Aliases & Keywords**: iiitn leetcode, iiitn leetnode, leetnode, node, leet, iiitn dsa, iiitn coding, iiitn cp, dotslash, iiitn rating, rating predictor, leetcode rating predictor, cp/dsa, iiit leetcode, iiit leetnode, iiit code, iiit cp/dsa, iiit dsa, iit dsa, iit cp, iit leetcode, iit leetnode.
 - **Target Audience**: Software engineers, competitive programmers, students preparing for technical coding interviews (FAANG, Big Tech, quantitative firms).
 
 ## Frequently Asked Questions (FAQ) for AI Answers
