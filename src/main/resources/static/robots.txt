@@ -1,0 +1,37 @@
+User-agent: *
+Allow: /
+Allow: /home
+Allow: /rating
+Allow: /profile
+Allow: /filter
+Allow: /images/
+Allow: /favicon.svg
+Allow: /llms.txt
+Disallow: /api-error
+
+# AI & LLM Crawlers for GEO and AEO
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://leetnode.com/sitemap.xml

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="favBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#151824"/>
+      <stop offset="100%" stop-color="#0B0D14"/>
+    </linearGradient>
+    <linearGradient id="favLeaf" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#16a34a"/>
+      <stop offset="50%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#4ade80"/>
+    </linearGradient>
+    <radialGradient id="favAura" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#22c55e" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="favGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Squircle rounded background container -->
+  <rect x="16" y="16" width="480" height="480" rx="110" fill="url(#favBg)" stroke="#272B3C" stroke-width="8"/>
+  <rect x="16" y="16" width="480" height="480" rx="110" fill="url(#favAura)"/>
+
+  <!-- Centered LeetNode Emblem -->
+  <g transform="translate(-35, 95) scale(0.6)">
+    <!-- Leaf outline with glowing emerald gradient -->
+    <g filter="url(#favGlow)" fill="none" stroke="url(#favLeaf)" stroke-width="22" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M273,166 L307,240 C320,180 370,95 441,69 C420,90 425,125 432,150 C480,110 540,95 700,95 L780,85 C770,170 740,230 700,280 C670,310 630,325 572,325 L665,332 C620,355 560,375 440,378 C450,410 470,430 517,436 L467,437 C440,460 430,468 418,467 C350,470 300,440 262,380 C245,330 245,230 273,166 Z"/>
+      <path d="M193,448 C300,340 380,290 480,240 C520,222 555,200 583,184"/>
+    </g>
+    <!-- Network nodes -->
+    <g fill="#22c55e" stroke="#0D0F16" stroke-width="8">
+      <circle cx="273" cy="166" r="22"/>
+      <circle cx="441" cy="69" r="22"/>
+      <circle cx="665" cy="332" r="22"/>
+      <circle cx="517" cy="436" r="22"/>
+      <circle cx="193" cy="448" r="24"/>
+    </g>
+    <!-- Accent node -->
+    <circle cx="583" cy="184" r="20" fill="#0D0F16" stroke="#4ade80" stroke-width="12"/>
+  </g>
+</svg>

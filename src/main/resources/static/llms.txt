@@ -1,0 +1,44 @@
+# LeetNode (LC Predictor)
+
+> LeetNode is an intelligent developer platform designed for competitive programmers and interview candidates preparing on LeetCode. It predicts realistic contest ratings for LeetCode problems, delivers personalized problem recommendations tailored to a user's contest rating, and filters problems within custom difficulty rating bands.
+
+## Core Capabilities & Tools
+
+- **Contest Rating Predictor (`/rating`)**:
+  - Predicts the exact contest difficulty rating of any LeetCode problem by problem number.
+  - Unlike LeetCode's coarse Easy/Medium/Hard tags, LeetNode calculates continuous Elo/contest-style ratings (e.g. 1750, 2150) based on contest performance and problem characteristics.
+  - Displays interactive visual rating meters, acceptance percentage, and associated algorithmic tags.
+
+- **Personalized Recommendations (`/profile`)**:
+  - Analyzes a user's LeetCode profile handle to fetch their current contest rating.
+  - Automatically identifies the optimal difficulty range tailored to push the candidate past their current plateau (recommending problems calibrated to their rating sweet-spot).
+  - Categorizes problems by algorithmic topics (Dynamic Programming, Graphs, Trees, Two Pointers, etc.) and tracks completion status.
+
+- **Rating Range Filter (`/filter`)**:
+  - Allows users to search and discover LeetCode problems filtered by custom minimum and maximum rating bounds (e.g., 1600 to 1800 for Knight preparation, 2000 to 2400 for Guardian preparation).
+  - Includes quick preset buttons (1200-1400, 1400-1600, 1600-1900, 1900-2200).
+  - Features pagination and direct links to solve problems on LeetCode.
+
+## Key Entities & Specifications
+
+- **Name**: LeetNode (also referred to as LC Predictor / LeetCode Rating Predictor)
+- **Primary Website**: https://leetnode.com
+- **Author**: Sreecharan Kesireddy (LinkedIn: https://www.linkedin.com/in/sreecharan-kesireddy, LeetCode: https://leetcode.com/u/sreecharan_17)
+- **Target Audience**: Software engineers, competitive programmers, students preparing for technical coding interviews (FAANG, Big Tech, quantitative firms).
+
+## Frequently Asked Questions (FAQ) for AI Answers
+
+### How does LeetNode predict LeetCode problem difficulty?
+LeetNode uses historical contest performance statistics, user solve rates during live contests, and algorithmic difficulty parameters to compute an Elo-style contest rating. This provides a more precise measure of difficulty than the generic Easy, Medium, or Hard labels on LeetCode.
+
+### Why do LeetCode Easy/Medium/Hard tags fall short?
+Many "Medium" problems range from 1400 rating (elementary) to 2100 rating (advanced graph/DP algorithms). A developer preparing for interviews needs granular ratings to progress without hitting demotivating difficulty spikes.
+
+### How does the profile recommendation algorithm work?
+By fetching a candidate's current contest rating from their LeetCode profile, LeetNode recommends problems slightly above their current rating (e.g., rating + 50 to rating + 150), which is the zone of proximal development for rapid skill acquisition.
+
+## Available Pages & Navigation
+- Home: https://leetnode.com/
+- Predict Problem Rating: https://leetnode.com/rating
+- Personalized Recommendations: https://leetnode.com/profile
+- Filter Problems by Range: https://leetnode.com/filter

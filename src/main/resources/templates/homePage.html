@@ -3,7 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LeetNode</title>
+    <title>LeetNode - LeetCode Contest Rating Predictor & Smart Problem Recommender</title>
+    
+    <!-- Primary SEO Meta Tags -->
+    <meta name="google-site-verification" content="Ff2GGqlVfDWZnatvevoZGH2_jhMVphEfb9TrUa7qM6Y" />
+    <meta name="description" content="Discover true LeetCode problem difficulty ratings, receive personalized problem recommendations based on your contest rating, and filter problems by custom rating ranges.">
+    <meta name="keywords" content="LeetCode rating predictor, LeetCode contest rating, problem difficulty, LeetCode recommendations, DSA preparation, coding interview prep, LeetNode, Knight, Guardian, competitive programming">
+    <meta name="author" content="Sreecharan Kesireddy">
+    <link rel="canonical" href="https://leetnode.com/">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+    <!-- Open Graph / Facebook / LinkedIn (SEO & GEO) -->
+    <meta property="og:site_name" content="LeetNode">
+    <meta property="og:title" content="LeetNode - LeetCode Contest Rating Predictor & Smart Problem Recommender">
+    <meta property="og:description" content="Predict realistic contest ratings for LeetCode problems, get personalized recommendations based on your profile, and filter problems by rating range.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://leetnode.com/">
+    <meta property="og:image" content="https://leetnode.com/images/android-chrome-512x512.png">
+    <meta property="og:image:alt" content="LeetNode Logo and Emblem">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LeetNode - LeetCode Contest Rating Predictor">
+    <meta name="twitter:description" content="Predict true problem difficulty ratings and get personalized recommendations for your LeetCode journey.">
+    <meta name="twitter:image" content="https://leetnode.com/images/android-chrome-512x512.png">
+
+    <!-- Favicon & Web Manifest -->
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+    <link rel="alternate icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#22c55e">
+
+    <!-- GEO & AEO: Structured JSON-LD Schema (WebSite, WebApplication, FAQPage, Organization) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://leetnode.com/#website",
+          "url": "https://leetnode.com/",
+          "name": "LeetNode",
+          "description": "LeetCode Contest Rating Predictor & Smart Problem Recommender",
+          "publisher": {
+            "@type": "Person",
+            "name": "Sreecharan Kesireddy",
+            "sameAs": [
+              "https://www.linkedin.com/in/sreecharan-kesireddy",
+              "https://leetcode.com/u/sreecharan_17"
+            ]
+          }
+        },
+        {
+          "@type": "WebApplication",
+          "@id": "https://leetnode.com/#application",
+          "name": "LeetNode",
+          "url": "https://leetnode.com/",
+          "applicationCategory": "EducationalApplication",
+          "operatingSystem": "All",
+          "description": "Predict true LeetCode problem difficulty ratings, get personalized recommendations based on your contest rating, and filter problems by rating range.",
+          "featureList": [
+            "LeetCode Contest Rating Predictor",
+            "Personalized Problem Recommendations Based on User Rating",
+            "Custom Rating Range Problem Filter",
+            "Algorithmic Topic Tag Categorization",
+            "Dark and Light Theme with View Transition Morph Animation"
+          ],
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://leetnode.com/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is LeetNode and how does it help my LeetCode prep?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "LeetNode is a precision preparation platform for LeetCode. Instead of relying on broad Easy, Medium, or Hard labels, LeetNode calculates continuous contest difficulty ratings, provides personalized practice problems tailored to your contest rating, and lets you filter problems by exact rating ranges."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How is a LeetCode problem's contest rating predicted?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "LeetNode analyzes historical contest performance data, live contest solve percentages, user rating distributions, and algorithmic problem characteristics to calculate an Elo-style contest difficulty rating."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Why are continuous ratings better than Easy, Medium, and Hard?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "On LeetCode, Medium problems can vary wildly from rating 1400 to rating 2150. Practicing with granular ratings prevents hitting demotivating walls and ensures you train in your optimal growth zone."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How are personalized problem recommendations chosen?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "When you enter your LeetCode username, LeetNode retrieves your contest rating and identifies your zone of proximal development—typically problems rated 50 to 150 points above your current rating."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I practice problems within a specific rating range?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes! With the Filter tool, you can specify any minimum and maximum rating (for example, 1600 to 1800 for Knight badge preparation or 2000+ for Guardian badge preparation) and get a paginated list of matching problems with direct links to solve them."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
     <script>
         (function () {
             try {
@@ -121,16 +243,50 @@
 
         :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 
-        /* Top bar */
-        .topbar {
-            width: min(1040px, 100%);
-            margin: 0 auto;
-            padding: 22px 20px 0;
-            display: flex; align-items: center; justify-content: space-between; gap: 12px;
+        /* Site Header & Top Bar */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            background: color-mix(in srgb, var(--bg) 82%, transparent);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border-bottom: 1px solid color-mix(in srgb, var(--line) 75%, transparent);
+            transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
         }
-        .brand { display: inline-flex; line-height: 0; }
+        .site-header.is-scrolled {
+            background: color-mix(in srgb, var(--bg) 92%, transparent);
+            border-bottom-color: var(--line);
+            box-shadow: 0 4px 20px -2px rgba(18, 20, 28, 0.06);
+        }
+        [data-theme="dark"] .site-header.is-scrolled {
+            box-shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.45);
+        }
+
+        .topbar {
+            width: min(1400px, 100%);
+            margin: 0 auto;
+            padding: 10px clamp(16px, 2.5vw, 32px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            line-height: 0;
+            text-decoration: none;
+            transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .brand:hover {
+            transform: scale(1.02);
+        }
         .brand-logo {
-            height: 48px;
+            height: 38px;
             width: auto;
             display: block;
         }
@@ -145,22 +301,131 @@
             :root:not([data-theme="light"]) .brand-logo.logo-light { display: none !important; }
         }
 
+        .brand-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--accent);
+            background: var(--accent-soft);
+            border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+            padding: 3px 8px;
+            border-radius: 9999px;
+            letter-spacing: 0.02em;
+            line-height: 1.2;
+            user-select: none;
+        }
+        .brand-badge-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 8px var(--accent);
+            animation: pulse-dot 2.5s infinite ease-in-out;
+        }
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.45; transform: scale(0.85); }
+        }
+
         .topbar-actions {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
-        .nav { display: flex; gap: 4px; }
-        .nav a {
-            padding: 8px 12px;
-            border-radius: 10px;
-            color: var(--muted);
-            font-size: 14px; font-weight: 500;
-            text-decoration: none;
-            transition: background 0.2s ease, color 0.2s ease;
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            background: color-mix(in srgb, var(--surface) 75%, transparent);
+            padding: 4px;
+            border-radius: 9999px;
+            border: 1px solid var(--line);
+            box-shadow: 0 1px 2px rgba(18, 20, 28, 0.03);
         }
-        .nav a:hover { background: var(--accent-soft); color: var(--ink); }
+        .nav a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: 9999px;
+            color: var(--muted);
+            font-size: 13.5px;
+            font-weight: 500;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid transparent;
+        }
+        .nav-icon {
+            width: 14px;
+            height: 14px;
+            opacity: 0.7;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+            flex-shrink: 0;
+        }
+        .nav a:hover {
+            color: var(--ink);
+            background: var(--surface);
+        }
+        .nav a:hover .nav-icon {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+        .nav a[aria-current="page"] {
+            background: var(--surface);
+            color: var(--ink);
+            font-weight: 600;
+            border-color: color-mix(in srgb, var(--line) 90%, transparent);
+            box-shadow: 0 1px 4px rgba(18, 20, 28, 0.08), 0 0 0 1px color-mix(in srgb, var(--accent) 20%, transparent);
+        }
+        .nav a[aria-current="page"] .nav-icon {
+            opacity: 1;
+            color: var(--accent);
+        }
+
+        .topbar-divider {
+            width: 1px;
+            height: 20px;
+            background: var(--line);
+            margin: 0 2px;
+            flex-shrink: 0;
+        }
+
+        .github-star-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: 9999px;
+            border: 1px solid var(--line);
+            background: var(--surface);
+            color: var(--ink);
+            font-size: 13px;
+            font-weight: 500;
+            text-decoration: none;
+            box-shadow: 0 1px 2px rgba(18, 20, 28, 0.03);
+            transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+            flex-shrink: 0;
+        }
+        .github-star-btn:hover {
+            background: var(--surface-2);
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-1px);
+            box-shadow: 0 3px 10px var(--accent-soft);
+        }
+        .github-star-btn:active {
+            transform: scale(0.96);
+        }
+        .github-icon {
+            width: 15px;
+            height: 15px;
+            flex-shrink: 0;
+        }
 
         /* Round Morph Theme Toggle Button */
         .theme-toggle-btn {
@@ -235,17 +500,17 @@
 
         /* Hero */
         .section-container {
-            width: min(1040px, 100%);
+            width: min(1400px, 100%);
             min-height: calc(100vh - 70px);
             margin: 0 auto;
-            padding: 20px 20px 60px;
+            padding: 20px clamp(16px, 2.5vw, 32px) 60px;
             display: flex;
             align-items: center;
         }
         .hero-inner { width: 100%; }
         .hero-title {
             margin: 0;
-            max-width: 760px;
+            max-width: 900px;
             font-family: var(--font-display);
             font-weight: 700;
             font-size: clamp(2.2rem, 6vw, 3.8rem);
@@ -262,13 +527,15 @@
             letter-spacing: -0.015em;
             color: var(--accent);
         }
-        .hero-note { margin: 0 0 40px; max-width: 540px; color: var(--muted); font-size: 17px; }
+        .hero-note { margin: 0 0 40px; max-width: 680px; color: var(--muted); font-size: 17px; }
 
-        /* Two options */
-        .options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+        /* Three options in balanced grid */
+        .options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        @media (max-width: 960px) { .options { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 640px) { .options { grid-template-columns: 1fr; } }
         .option {
             display: flex; flex-direction: column;
-            padding: clamp(22px, 3.5vw, 32px);
+            padding: clamp(22px, 3vw, 32px);
             background: var(--surface);
             border: 1px solid var(--line);
             border-radius: 24px;
@@ -293,129 +560,531 @@
         }
         .option p { margin: 0 0 26px; color: var(--muted); max-width: 40ch; }
 
-        /* Small previews of what each tool gives you */
+        /* Authentic micro-previews for each tool */
         .preview {
             margin-top: auto;
-            margin-bottom: 26px;
-            padding: 18px;
-            border-radius: 14px;
+            margin-bottom: 24px;
+            padding: 14px 16px;
+            border-radius: 16px;
             background: var(--surface-2);
             border: 1px solid var(--line);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            pointer-events: none;
         }
-        .mini-meter { position: relative; height: 8px; border-radius: 999px; background: linear-gradient(90deg, #34C48B 0%, #F2C14E 40%, #F28C38 70%, #E5484D 100%); }
-        .mini-meter span {
-            position: absolute; top: 50%; left: 62%;
-            width: 18px; height: 18px; transform: translate(-50%, -50%);
-            border-radius: 50%; background: var(--surface); border: 4px solid var(--ink);
+        .preview-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
         }
-        .mini-meter-label { display: flex; justify-content: space-between; margin-top: 12px; font-size: 13px; color: var(--muted); }
-        .mini-row { display: flex; align-items: center; gap: 12px; }
-        .mini-row + .mini-row { margin-top: 12px; }
-        .mini-line { flex: 1; height: 10px; border-radius: 999px; background: var(--line); }
-        .mini-row:nth-child(2) .mini-line { max-width: 70%; }
-        .mini-pill { width: 44px; height: 22px; border-radius: 999px; background: color-mix(in srgb, var(--lvl-medium) 22%, transparent); border: 1px solid color-mix(in srgb, var(--lvl-medium) 40%, transparent); }
-        .mini-row:nth-child(2) .mini-pill { background: color-mix(in srgb, var(--lvl-easy) 22%, transparent); border-color: color-mix(in srgb, var(--lvl-easy) 40%, transparent); }
-        .mini-btn { width: 52px; height: 22px; border-radius: 8px; background: var(--accent-soft); }
+        .preview-title-chip {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--ink);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .preview-pill {
+            padding: 2px 8px;
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 700;
+            font-variant-numeric: tabular-nums;
+            flex-shrink: 0;
+        }
+        .pill-hard {
+            background: color-mix(in srgb, var(--lvl-hard) 14%, transparent);
+            color: var(--lvl-hard);
+            border: 1px solid color-mix(in srgb, var(--lvl-hard) 35%, transparent);
+        }
+        .pill-med {
+            background: color-mix(in srgb, var(--lvl-medium) 14%, transparent);
+            color: var(--lvl-medium);
+            border: 1px solid color-mix(in srgb, var(--lvl-medium) 35%, transparent);
+        }
+        .pill-easy {
+            background: color-mix(in srgb, var(--lvl-easy) 14%, transparent);
+            color: var(--lvl-easy);
+            border: 1px solid color-mix(in srgb, var(--lvl-easy) 35%, transparent);
+        }
+        .preview-meter-bar {
+            position: relative;
+            height: 6px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #10b981 0%, #f59e0b 55%, #ef4444 100%);
+        }
+        .preview-meter-marker {
+            position: absolute;
+            top: 50%;
+            left: 72%;
+            width: 14px;
+            height: 14px;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background: var(--surface);
+            border: 3px solid var(--accent);
+            box-shadow: 0 0 6px var(--accent-soft);
+        }
+        .preview-meter-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--muted);
+            font-weight: 500;
+        }
+        .preview-tag-list {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        .preview-sub-tag {
+            font-size: 11px;
+            padding: 3px 8px;
+            border-radius: 6px;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            color: var(--muted);
+            font-weight: 500;
+        }
 
         .option-cta {
             align-self: flex-start;
-            padding: 13px 24px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 12px 22px;
             border-radius: 12px;
             background: var(--accent);
             color: var(--on-accent);
             font-weight: 600;
-            transition: background 0.2s ease;
+            font-size: 15px;
+            transition: background 0.2s ease, transform 0.2s ease;
         }
-        .option:hover .option-cta { background: var(--accent-hover); }
+        .option-cta .cta-arrow {
+            transition: transform 0.2s ease;
+        }
+        .option:hover .option-cta {
+            background: var(--accent-hover);
+        }
+        .option:hover .option-cta .cta-arrow {
+            transform: translateX(4px);
+        }
 
         [hidden] { display: none !important; }
 
-        /* Footer: view counts + credits */
+        /* FAQ Section (AEO & GEO optimized) */
+        .faq-section {
+            width: min(1400px, 100%);
+            margin: 40px auto 70px;
+            padding: 0 clamp(16px, 2.5vw, 32px);
+        }
+
+        /* Upgraded Footer System */
         .site-footer {
-            width: min(1040px, 100%);
-            margin: 0 auto;
-            padding: 0 20px 40px;
+            width: min(1400px, 100%);
+            margin: 60px auto 0;
+            padding: 0 clamp(16px, 2.5vw, 32px) 36px;
         }
         .footer-inner {
-            display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
-            gap: 20px 32px;
-            padding-top: 28px;
             border-top: 1px solid var(--line);
+            padding-top: 48px;
         }
-        .views { display: flex; align-items: center; gap: 28px; }
-        .view-stat { display: flex; flex-direction: column; gap: 2px; }
-        .view-stat + .view-stat { padding-left: 28px; border-left: 1px solid var(--line); }
-        .view-label { font-size: 13px; font-weight: 500; color: var(--muted); }
-        .view-value {
-            font-family: var(--font-display);
-            font-size: 1.6rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1;
-            font-variant-numeric: tabular-nums;
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.3fr;
+            gap: 40px 32px;
+            margin-bottom: 48px;
         }
-        .credits {
-            margin: 0 0 0 auto;
-            display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
-            font-size: 15px; color: var(--muted);
+        .footer-brand-col {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
         }
-        .credits strong { color: var(--ink); font-weight: 600; }
-        .credit-link {
+        .footer-brand {
+            display: inline-flex;
+            line-height: 0;
+        }
+        .footer-brand .brand-logo {
+            height: 40px;
+            width: auto;
+        }
+        .footer-tagline {
+            margin: 0;
+            max-width: 38ch;
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--muted);
+        }
+        .footer-status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             padding: 6px 14px;
+            width: fit-content;
             border-radius: 999px;
-            border: 1px solid var(--line);
             background: var(--surface);
+            border: 1px solid var(--line);
+            font-size: 12px;
+            font-weight: 500;
             color: var(--ink);
-            font-size: 14px; font-weight: 500;
-            text-decoration: none;
-            transition: border-color 0.2s ease, background 0.2s ease;
         }
-        .credit-link:hover { border-color: var(--accent); background: var(--accent-soft); }
+        .status-dot-pulse {
+            position: relative;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #22c55e;
+        }
+        .status-dot-pulse::after {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            border-radius: 50%;
+            background: rgba(34, 197, 94, 0.4);
+            animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse-ring {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.6); opacity: 0; }
+        }
+        .footer-col-title {
+            margin: 0 0 16px;
+            font-family: var(--font-display);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--ink);
+        }
+        .footer-nav-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .footer-nav-list a {
+            color: var(--muted);
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.2s ease, transform 0.2s ease;
+            display: inline-block;
+        }
+        .footer-nav-list a:hover {
+            color: var(--accent);
+            transform: translateX(3px);
+        }
+        .creator-card {
+            padding: 16px;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .creator-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .creator-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--accent-soft);
+            border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+            color: var(--accent);
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 14px;
+            display: grid;
+            place-items: center;
+        }
+        .creator-name {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--ink);
+            line-height: 1.2;
+        }
+        .creator-handle {
+            font-size: 12px;
+            color: var(--muted);
+        }
+        .creator-links {
+            display: flex;
+            gap: 8px;
+        }
+        .creator-social-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+            background: var(--surface-2);
+            border: 1px solid var(--line);
+            color: var(--muted);
+            text-decoration: none;
+            transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+        }
+        .creator-social-btn:hover {
+            background: var(--accent-soft);
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+        .footer-views-box {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 10px 14px;
+            background: var(--surface-2);
+            border-radius: 12px;
+            border: 1px solid var(--line);
+        }
+        .footer-view-stat {
+            display: flex;
+            flex-direction: column;
+        }
+        .footer-view-stat + .footer-view-stat {
+            padding-left: 16px;
+            border-left: 1px solid var(--line);
+        }
+        .footer-view-num {
+            font-family: var(--font-display);
+            font-size: 16px;
+            font-weight: 700;
+            font-variant-numeric: tabular-nums;
+            color: var(--ink);
+            line-height: 1.1;
+        }
+        .footer-view-label {
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--muted);
+        }
+        .footer-bottom {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding-top: 24px;
+            border-top: 1px solid var(--line);
+            font-size: 13px;
+            color: var(--muted);
+        }
+        .footer-bottom-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .footer-copy strong {
+            color: var(--ink);
+        }
+        .footer-disclaimer {
+            font-size: 12px;
+            opacity: 0.8;
+        }
+        .back-to-top {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 999px;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            color: var(--muted);
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+        }
+        .back-to-top:hover {
+            background: var(--accent-soft);
+            border-color: var(--accent);
+            color: var(--ink);
+            transform: translateY(-2px);
+        }
+        @media (max-width: 992px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 32px 24px;
+            }
+            .footer-brand-col {
+                grid-column: 1 / -1;
+            }
+        }
+        @media (max-width: 600px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .back-to-top {
+                align-self: flex-start;
+            }
+        }
+        .faq-header {
+            margin-bottom: 28px;
+        }
+        .faq-heading {
+            margin: 0 0 8px;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(1.8rem, 4vw, 2.3rem);
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+        }
+        .faq-sub {
+            margin: 0;
+            color: var(--muted);
+            max-width: 65ch;
+            font-size: 15px;
+        }
+        .faq-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .faq-item {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 18px 22px;
+            box-shadow: var(--shadow);
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .faq-item[open] {
+            border-color: var(--accent);
+            box-shadow: 0 4px 20px var(--accent-soft);
+        }
+        .faq-question {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--ink);
+            cursor: pointer;
+            list-style: none;
+            user-select: none;
+        }
+        .faq-question::-webkit-details-marker { display: none; }
+        .faq-chevron {
+            color: var(--muted);
+            flex-shrink: 0;
+            transition: transform 0.25s ease, color 0.2s ease;
+        }
+        .faq-item[open] .faq-chevron {
+            transform: rotate(180deg);
+            color: var(--accent);
+        }
+        .faq-answer {
+            margin-top: 14px;
+            padding-top: 14px;
+            border-top: 1px solid var(--line);
+            color: var(--muted);
+            line-height: 1.6;
+            font-size: 15px;
+        }
+        .faq-answer p { margin: 0; }
 
+        @media (max-width: 860px) {
+            .brand-badge { display: none; }
+        }
         @media (max-width: 760px) {
             .options { grid-template-columns: 1fr; }
-            .nav a { padding: 8px 10px; }
             .credits { margin-left: 0; }
         }
-        @media (max-width: 460px) {
-            .nav { display: none; }
+        @media (max-width: 680px) {
+            .topbar { padding: 8px clamp(12px, 2.5vw, 20px); gap: 8px; }
+            .brand-logo { height: 32px !important; }
+            .github-star-btn .github-text { display: none; }
+            .github-star-btn { padding: 7px; width: 34px; height: 34px; justify-content: center; }
+            .nav a { padding: 5px 9px; font-size: 12.5px; gap: 4px; }
+            .nav-icon { width: 13px; height: 13px; }
+        }
+        @media (max-width: 480px) {
+            .topbar-divider { display: none; }
+            .nav a span { display: none; }
+            .nav a { padding: 7px; border-radius: 50%; }
+            .nav-icon { width: 15px; height: 15px; }
+            .theme-toggle-btn { width: 34px; height: 34px; }
         }
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
             .option, .option-cta, .nav a, .credit-link { transition: none; }
             .option:hover { transform: none; }
         }
-        @media (max-width: 480px) { .brand-logo { height: 40px; } }
     </style>
 </head>
 <body>
 
-<header class="topbar">
-    <a class="brand" href="/" aria-label="LeetNode home">
-        <img th:src="@{/images/leetnode-logo-light.svg}" src="/images/leetnode-logo-light.svg"
-             alt="LeetNode" class="brand-logo logo-light">
-        <img th:src="@{/images/leetnode-logo-dark.svg}" src="/images/leetnode-logo-dark.svg"
-             alt="LeetNode" class="brand-logo logo-dark">
-    </a>
-    <div class="topbar-actions">
-        <nav class="nav" aria-label="Main">
-            <a href="/rating" th:href="@{/rating}">Predict rating</a>
-            <a href="/profile" th:href="@{/profile}">Recommendations</a>
-            <a href="/filter" th:href="@{/filter}">Filter</a>
-        </nav>
-        <button id="themeToggleBtn" class="theme-toggle-btn" type="button" aria-label="Toggle theme" title="Toggle theme">
-            <svg class="theme-toggle-icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="12" cy="12" r="4.5" fill="currentColor"/>
-                <line x1="12" y1="2" x2="12" y2="4.2"/>
-                <line x1="12" y1="19.8" x2="12" y2="22"/>
-                <line x1="4.93" y1="4.93" x2="6.48" y2="6.48"/>
-                <line x1="17.52" y1="17.52" x2="19.07" y2="19.07"/>
-                <line x1="2" y1="12" x2="4.2" y2="12"/>
-                <line x1="19.8" y1="12" x2="22" y2="12"/>
-                <line x1="4.93" y1="19.07" x2="6.48" y2="17.52"/>
-                <line x1="17.52" y1="6.48" x2="19.07" y2="4.93"/>
-            </svg>
-            <svg class="theme-toggle-icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor"/>
-            </svg>
-        </button>
+<header class="site-header" id="top">
+    <div class="topbar">
+        <a class="brand" href="/" aria-label="LeetNode home">
+            <img th:src="@{/images/leetnode-logo-light.svg}" src="/images/leetnode-logo-light.svg"
+                 alt="LeetNode" class="brand-logo logo-light">
+            <img th:src="@{/images/leetnode-logo-dark.svg}" src="/images/leetnode-logo-dark.svg"
+                 alt="LeetNode" class="brand-logo logo-dark">
+        </a>
+        <div class="topbar-actions">
+            <nav class="nav" aria-label="Main Navigation">
+                <a href="/rating" th:href="@{/rating}">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M12 14l4-4"/><path d="M3.3 17a9 9 0 1 1 17.4 0"/>
+                    </svg>
+                    <span>Predict rating</span>
+                </a>
+                <a href="/profile" th:href="@{/profile}">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                    </svg>
+                    <span>Recommendations</span>
+                </a>
+                <a href="/filter" th:href="@{/filter}">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+                    </svg>
+                    <span>Filter</span>
+                </a>
+            </nav>
+            <div class="topbar-divider" aria-hidden="true"></div>
+            <a class="github-star-btn" href="https://github.com/Sreecharan1703/Leetcode_Rating_Predictor" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository" title="Star LeetNode on GitHub">
+                <svg class="github-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+                <span class="github-text">Star</span>
+            </a>
+            <button id="themeToggleBtn" class="theme-toggle-btn" type="button" aria-label="Toggle theme" title="Toggle theme">
+                <svg class="theme-toggle-icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="4.5" fill="currentColor"/>
+                    <line x1="12" y1="2" x2="12" y2="4.2"/>
+                    <line x1="12" y1="19.8" x2="12" y2="22"/>
+                    <line x1="4.93" y1="4.93" x2="6.48" y2="6.48"/>
+                    <line x1="17.52" y1="17.52" x2="19.07" y2="19.07"/>
+                    <line x1="2" y1="12" x2="4.2" y2="12"/>
+                    <line x1="19.8" y1="12" x2="22" y2="12"/>
+                    <line x1="4.93" y1="19.07" x2="6.48" y2="17.52"/>
+                    <line x1="17.52" y1="6.48" x2="19.07" y2="4.93"/>
+                </svg>
+                <svg class="theme-toggle-icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor"/>
+                </svg>
+            </button>
+        </div>
     </div>
 </header>
 
@@ -424,72 +1093,224 @@
     <div class="hero-inner">
         <h1 class="hero-title">Wanna grind LeetCode but don't know where to start?</h1>
         <p class="hero-sub">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7M7.5 8a2.5 2.5 0 0 1 0-5C11 3 12 8 12 8s1-5 4.5-5a2.5 2.5 0 0 1 0 5"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             Here's a gift for you.
         </p>
-        <p class="hero-note">Check how hard a problem really is, Get a list of problems picked for you, and many more.</p>
+        <p class="hero-note">Stop guessing problem difficulty with broad Easy, Medium, and Hard tags. Train in your optimal development zone with ratings.</p>
 
         <div class="options">
             <a class="option" href="/rating" th:href="@{/rating}">
                 <div class="option-icon" aria-hidden="true">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 14l4-4"/><path d="M3.3 17a9 9 0 1 1 17.4 0"/></svg>
                 </div>
-                <h2>Predict a problem's rating</h2>
+                <h2>Predict Problem Rating</h2>
                 <p>Enter a question number to see its estimated rating, acceptance rate and topic tags.</p>
-                <div class="preview" aria-hidden="true">
-                    <div class="mini-meter"><span></span></div>
-                    <div class="mini-meter-label"><span>Easier</span><span>Harder</span></div>
+                <div class="preview preview-predict" aria-hidden="true">
+                    <div class="preview-header">
+                        <span class="preview-title-chip">#42 Trapping Rain Water</span>
+                        <span class="preview-pill pill-hard">2085 Elo</span>
+                    </div>
+                    <div class="preview-meter-bar"><span class="preview-meter-marker"></span></div>
+                    <div class="preview-meter-meta">
+                        <span>Hard Tier · Top 12%</span>
+                        <span>Acc: 61.2%</span>
+                    </div>
                 </div>
-                <span class="option-cta">Predict rating</span>
+                <span class="option-cta">Predict Rating <span class="cta-arrow" aria-hidden="true">→</span></span>
             </a>
 
             <a class="option" href="/profile" th:href="@{/profile}">
                 <div class="option-icon" aria-hidden="true">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
                 </div>
-                <h2>Get recommendations</h2>
+                <h2>Get Recommendations</h2>
                 <p>Enter your LeetCode username to see your contest stats and problems picked for you.</p>
-                <div class="preview" aria-hidden="true">
-                    <div class="mini-row"><span class="mini-line"></span><span class="mini-pill"></span><span class="mini-btn"></span></div>
-                    <div class="mini-row"><span class="mini-line"></span><span class="mini-pill"></span><span class="mini-btn"></span></div>
+                <div class="preview preview-recs" aria-hidden="true">
+                    <div class="preview-header">
+                        <span class="preview-title-chip">Knight Prep Track</span>
+                        <span class="preview-pill pill-med">1750 – 1900</span>
+                    </div>
+                    <div class="preview-tag-list">
+                        <span class="preview-sub-tag">Graph / BFS</span>
+                        <span class="preview-sub-tag">Dynamic Prog</span>
+                        <span class="preview-sub-tag">Binary Search</span>
+                    </div>
+                    <div class="preview-meter-meta">
+                        <span>Course Schedule II</span>
+                        <span style="color:var(--lvl-medium); font-weight:600;">1820 Elo</span>
+                    </div>
                 </div>
-                <span class="option-cta">Get recommendations</span>
+                <span class="option-cta">Get Recommendations <span class="cta-arrow" aria-hidden="true">→</span></span>
             </a>
 
             <a class="option" href="/filter" th:href="@{/filter}">
                 <div class="option-icon" aria-hidden="true">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
                 </div>
-                <h2>Filter Questions</h2>
-                <p>Enter a rating range and fetch the problems in that range.</p>
-                <div class="preview" aria-hidden="true">
-                    <div class="mini-row"><span class="mini-pill"></span><span class="mini-pill"></span><span class="mini-line"></span></div>
+                <h2>Filter by Rating Range</h2>
+                <p>Browse and practice problems in exact contest rating intervals.</p>
+                <div class="preview preview-filter" aria-hidden="true">
+                    <div class="preview-header">
+                        <span class="preview-title-chip">Range: 1600 – 1900</span>
+                        <span class="preview-pill pill-easy">384 Problems</span>
+                    </div>
+                    <div class="preview-meter-bar" style="background: linear-gradient(90deg, #10b981 15%, #f59e0b 70%, #ef4444 100%);">
+                        <span class="preview-meter-marker" style="left: 55%;"></span>
+                    </div>
+                    <div class="preview-meter-meta">
+                        <span>Knight Badge Practice Zone</span>
+                        <span>Paginated List</span>
+                    </div>
                 </div>
-                <span class="option-cta">Filter Now</span>
+                <span class="option-cta">Filter Problems <span class="cta-arrow" aria-hidden="true">→</span></span>
             </a>
         </div>
     </div>
 </div>
+
+<section class="faq-section" aria-labelledby="faq-title" itemscope itemtype="https://schema.org/FAQPage">
+    <div class="faq-header">
+        <h2 id="faq-title" class="faq-heading">Frequently Asked Questions</h2>
+        <p class="faq-sub">Everything you need to know about LeetNode, problem difficulty ratings, and personalized recommendations.</p>
+    </div>
+    <div class="faq-grid">
+        <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <summary class="faq-question">
+                <span itemprop="name">What is LeetNode and how does it help my LeetCode prep?</span>
+                <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <p itemprop="text">LeetNode is a precision preparation platform for LeetCode. Instead of relying on broad and misleading Easy, Medium, or Hard labels, LeetNode calculates continuous contest difficulty ratings (e.g., 1650 or 2150), provides personalized practice problems tailored to your contest rating, and lets you filter problems by exact rating ranges.</p>
+            </div>
+        </details>
+
+        <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <summary class="faq-question">
+                <span itemprop="name">How is a LeetCode problem's contest rating predicted?</span>
+                <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <p itemprop="text">LeetNode analyzes historical contest performance data, live contest solve percentages, user rating distributions, and algorithmic problem characteristics to calculate an Elo-style contest difficulty rating. This accurately reflects how difficult a problem proved to be for actual competitive programmers.</p>
+            </div>
+        </details>
+
+        <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <summary class="faq-question">
+                <span itemprop="name">Why are continuous ratings better than Easy, Medium, and Hard?</span>
+                <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <p itemprop="text">On LeetCode, "Medium" problems can vary wildly from rating 1400 (approachable for beginners) to rating 2150 (requiring complex dynamic programming or advanced graphs). Practicing with granular ratings prevents hitting demotivating walls and ensures you train in your optimal growth zone.</p>
+            </div>
+        </details>
+
+        <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <summary class="faq-question">
+                <span itemprop="name">How are personalized problem recommendations chosen?</span>
+                <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <p itemprop="text">When you enter your LeetCode username, LeetNode retrieves your contest rating and identifies your zone of proximal development—typically problems rated 50 to 150 points above your current rating. These problems are grouped by topic to systematically build algorithmic mastery.</p>
+            </div>
+        </details>
+
+        <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <summary class="faq-question">
+                <span itemprop="name">Can I practice problems within a specific rating range?</span>
+                <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <p itemprop="text">Yes! With the Filter tool, you can specify any minimum and maximum rating (for example, 1600 to 1800 for Knight badge preparation or 2000+ for Guardian badge preparation) and get a paginated list of matching problems with direct links to solve them.</p>
+            </div>
+        </details>
+    </div>
+</section>
 </main>
 
 <footer class="site-footer">
     <div class="footer-inner">
-        <div class="views" id="viewStats" aria-live="polite" hidden>
-            <div class="view-stat">
-                <span class="view-label">Total views</span>
-                <span class="view-value" id="totalViews">0</span>
+        <div class="footer-grid">
+            <!-- Brand & Mission Column -->
+            <div class="footer-brand-col">
+                <a class="footer-brand" href="/" aria-label="LeetNode home">
+                    <img th:src="@{/images/leetnode-logo-dark.svg}" src="/images/leetnode-logo-dark.svg" alt="LeetNode" class="brand-logo logo-dark" width="130" height="34" />
+                    <img th:src="@{/images/leetnode-logo-light.svg}" src="/images/leetnode-logo-light.svg" alt="LeetNode" class="brand-logo logo-light" width="130" height="34" />
+                </a>
+                <p class="footer-tagline">
+                    Continuous contest difficulty ratings, personalized practice tracks, and targeted problem filters for competitive programmers.
+                </p>
             </div>
-            <div class="view-stat">
-                <span class="view-label">Views today</span>
-                <span class="view-value" id="todayViews">0</span>
+
+            <!-- Platform Tools Column -->
+            <div class="footer-col">
+                <h3 class="footer-col-title">Platform Tools</h3>
+                <ul class="footer-nav-list">
+                    <li><a href="/rating" th:href="@{/rating}">Rating Predictor</a></li>
+                    <li><a href="/profile" th:href="@{/profile}">Problem Recommendations</a></li>
+                    <li><a href="/filter" th:href="@{/filter}">Rating Range Filter</a></li>
+                    <li><a href="/#faq" th:href="@{/#faq}">Contest Rating FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Practice Bands Column -->
+            <div class="footer-col">
+                <h3 class="footer-col-title">Practice Bands</h3>
+                <ul class="footer-nav-list">
+                    <li><a href="/filter" th:href="@{/filter}">Foundation (1200 – 1400)</a></li>
+                    <li><a href="/filter" th:href="@{/filter}">Intermediate (1400 – 1600)</a></li>
+                    <li><a href="/filter" th:href="@{/filter}">Knight Badge Zone (1600 – 1900)</a></li>
+                    <li><a href="/filter" th:href="@{/filter}">Guardian Elite (1900+)</a></li>
+                </ul>
+            </div>
+
+            <!-- Creator Column -->
+            <div class="footer-col">
+                <h3 class="footer-col-title">Created By</h3>
+                <div class="creator-card">
+                    <div class="creator-meta">
+                        <span class="creator-avatar" aria-hidden="true">SK</span>
+                        <div>
+                            <div class="creator-name">Sreecharan Kesireddy</div>
+                            <div class="creator-handle">Software Engineer</div>
+                        </div>
+                    </div>
+                    <div class="creator-links">
+                        <a href="https://github.com/Sreecharan1703" target="_blank" rel="noopener noreferrer" class="creator-social-btn" title="GitHub Profile" aria-label="GitHub Profile">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/sreecharan-kesireddy" target="_blank" rel="noopener noreferrer" class="creator-social-btn" title="LinkedIn Profile" aria-label="LinkedIn Profile">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                        <a href="https://leetcode.com/u/sreecharan_17" target="_blank" rel="noopener noreferrer" class="creator-social-btn" title="LeetCode Profile" aria-label="LeetCode Profile">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .666-1.607L9.405 7.76l4.079-4.827c.484-.572.417-1.428-.15-1.917A1.375 1.375 0 0 0 13.483 0zm-2.88 7.218a1.38 1.38 0 0 0-.977.404l-5.699 5.699a1.377 1.377 0 0 0 0 1.95 1.38 1.38 0 0 0 1.95 0l5.7-5.7a1.38 1.38 0 0 0-.974-2.353zm4.23 2.18a1.378 1.378 0 0 0-.974.404l-2.84 2.84a1.38 1.38 0 0 0 1.95 1.95l2.84-2.84a1.38 1.38 0 0 0-.976-2.354z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-views-box" id="viewStats" aria-live="polite" hidden>
+                    <div class="footer-view-stat">
+                        <span class="footer-view-num" id="totalViews">0</span>
+                        <span class="footer-view-label">Total Views</span>
+                    </div>
+                    <div class="footer-view-stat">
+                        <span class="footer-view-num" id="todayViews">0</span>
+                        <span class="footer-view-label">Today</span>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <p class="credits">
-            <span>Made by <strong>Sreecharan</strong></span>
-            <a class="credit-link" href="https://www.linkedin.com/in/sreecharan-kesireddy" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a class="credit-link" href="https://leetcode.com/u/sreecharan_17" target="_blank" rel="noopener noreferrer">LeetCode</a>
-        </p>
+        <!-- Footer Bottom Bar -->
+        <div class="footer-bottom">
+            <div class="footer-bottom-info">
+                <span class="footer-copy">© 2026 <strong>LeetNode</strong>. Built for competitive programmers worldwide.</span>
+                <span class="footer-disclaimer">LeetNode is an independent analytical tool not affiliated with or endorsed by LeetCode Inc.</span>
+            </div>
+            <button type="button" class="back-to-top" onclick="window.scrollTo({top:0, behavior:'smooth'})" aria-label="Scroll back to top">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
+                <span>Back to top</span>
+            </button>
+        </div>
     </div>
 </footer>
 
@@ -580,6 +1401,21 @@
                 );
             });
         });
+    })();
+
+    // Sticky Header Elevation Observer
+    (function setupHeaderScroll() {
+        const header = document.querySelector('.site-header');
+        if (!header) return;
+        const updateHeader = () => {
+            if (window.scrollY > 8) {
+                header.classList.add('is-scrolled');
+            } else {
+                header.classList.remove('is-scrolled');
+            }
+        };
+        window.addEventListener('scroll', updateHeader, { passive: true });
+        updateHeader();
     })();
 </script>
 
