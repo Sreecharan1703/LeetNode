@@ -42,6 +42,11 @@ public class HomeController {
         return "roadmapPage";
     }
 
+    @GetMapping("/resources")
+    public String resources(){
+        return "resourcesPage";
+    }
+
     @GetMapping("/api-error")
     public String errorPage(@RequestParam("message") String message, Model model){
         model.addAttribute("error",message);

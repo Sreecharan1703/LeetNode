@@ -51,3 +51,4 @@ By fetching a candidate's current contest rating from their LeetCode profile, Le
 - Personalized Recommendations: https://www.leetnode.my.to/profile
 - Filter Problems by Range: https://www.leetnode.my.to/filter
 - DSA Roadmap: https://www.leetnode.my.to/roadmap
+- Curated Resources: https://www.leetnode.my.to/resources

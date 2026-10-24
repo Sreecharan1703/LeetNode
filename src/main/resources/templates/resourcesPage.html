@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curated Resources - LeetNode</title>
+
+    <!-- Primary SEO Meta Tags -->
+    <meta name="google-site-verification" content="Ff2GGqlVfDWZnatvevoZGH2_jhMVphEfb9TrUa7qM6Y" />
+    <meta name="description" content="Handpicked competitive programming and DSA resources: Striver's A2Z Sheet, CSES Problem Set, CSES Python Solutions, CP Handbook, and the OEIS encyclopedia.">
+    <meta name="keywords" content="striver a2z sheet, cses problemset, cses in python, cp handbook, competitive programming handbook, oeis, integer sequences, leetnode resources, dsa sheets, leetcode prep">
+    <meta name="author" content="Sreecharan Kesireddy">
+    <link rel="canonical" href="https://www.leetnode.my.to/resources">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:site_name" content="LeetNode">
+    <meta property="og:title" content="Curated CP & DSA Resources - LeetNode">
+    <meta property="og:description" content="Top-tier competitive programming sheets, problem sets, Python implementations, and reference books.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.leetnode.my.to/resources">
+    <meta property="og:image" content="https://www.leetnode.my.to/images/android-chrome-512x512.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Curated Resources - LeetNode">
+    <meta name="twitter:description" content="Handpicked problem sets, DSA sheets, Python solutions, and CP handbooks.">
+    <meta name="twitter:image" content="https://www.leetnode.my.to/images/android-chrome-512x512.png">
+
+    <!-- Favicon & Web Manifest -->
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+    <link rel="alternate icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#22c55e">
+
+    <!-- Structured JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "CollectionPage",
+          "@id": "https://www.leetnode.my.to/resources#page",
+          "name": "Curated CP & DSA Resources - LeetNode",
+          "url": "https://www.leetnode.my.to/resources",
+          "description": "Curated library of competitive programming problem sets, interview sheets, code implementations, and handbooks.",
+          "isPartOf": {
+            "@type": "WebSite",
+            "@id": "https://www.leetnode.my.to/#website",
+            "name": "LeetNode",
+            "url": "https://www.leetnode.my.to/"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.leetnode.my.to/" },
+            { "@type": "ListItem", "position": 2, "name": "Resources", "item": "https://www.leetnode.my.to/resources" }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <script>
+        (function () {
+            try {
+                const saved = localStorage.getItem('theme');
+                const theme = saved ? saved : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) {}
+        })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #F4F5F9;
+            --surface: #FFFFFF;
+            --surface-2: #F0F1F7;
+            --ink: #12141C;
+            --muted: #5E6475;
+            --line: #E1E3EC;
+            --dot: rgba(18, 20, 28, 0.09);
+            --accent: #22c55e;
+            --accent-hover: #16a34a;
+            --accent-soft: rgba(34, 197, 94, 0.10);
+            --on-accent: #FFFFFF;
+            --shadow: 0 1px 2px rgba(18, 20, 28, 0.04), 0 12px 32px -8px rgba(18, 20, 28, 0.10);
+            --font-display: 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;
+            --font-body: 'Instrument Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
+            color-scheme: light;
+        }
+
+        [data-theme="dark"] {
+            --bg: #0D0F16;
+            --surface: #151824;
+            --surface-2: #1C2030;
+            --ink: #F2F3F8;
+            --muted: #9AA1B5;
+            --line: #272B3C;
+            --dot: rgba(255, 255, 255, 0.07);
+            --accent: #22c55e;
+            --accent-hover: #4ade80;
+            --accent-soft: rgba(34, 197, 94, 0.14);
+            --on-accent: #0D0F16;
+            --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 16px 40px -8px rgba(0, 0, 0, 0.55);
+            color-scheme: dark;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) {
+                --bg: #0D0F16;
+                --surface: #151824;
+                --surface-2: #1C2030;
+                --ink: #F2F3F8;
+                --muted: #9AA1B5;
+                --line: #272B3C;
+                --dot: rgba(255, 255, 255, 0.07);
+                --accent: #22c55e;
+                --accent-hover: #4ade80;
+                --accent-soft: rgba(34, 197, 94, 0.14);
+                --on-accent: #0D0F16;
+                --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 16px 40px -8px rgba(0, 0, 0, 0.55);
+                color-scheme: dark;
+            }
+        }
+
+        ::view-transition-old(root),
+        ::view-transition-new(root) {
+            animation: none;
+            mix-blend-mode: normal;
+        }
+        ::view-transition-old(root) { z-index: 1; }
+        ::view-transition-new(root) { z-index: 9999; }
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 90px; background: var(--bg); }
+
+        body {
+            margin: 0;
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.5;
+            color: var(--ink);
+            background: transparent;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            background-image:
+                radial-gradient(60% 45% at 50% 0%, var(--accent-soft), transparent 70%),
+                radial-gradient(circle at 1px 1px, var(--dot) 1px, transparent 0);
+            background-size: 100% 100%, 28px 28px;
+            -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 45%, transparent 100%);
+            mask-image: linear-gradient(to bottom, #000 0%, #000 45%, transparent 100%);
+        }
+
+        :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+
+        /* Site Header */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            background: color-mix(in srgb, var(--bg) 82%, transparent);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border-bottom: 1px solid color-mix(in srgb, var(--line) 75%, transparent);
+            transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+        .site-header.is-scrolled {
+            background: color-mix(in srgb, var(--bg) 92%, transparent);
+            border-bottom-color: var(--line);
+            box-shadow: 0 4px 20px -2px rgba(18, 20, 28, 0.06);
+        }
+        [data-theme="dark"] .site-header.is-scrolled {
+            box-shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.45);
+        }
+
+        .topbar {
+            width: min(1400px, 100%);
+            margin: 0 auto;
+            padding: 10px clamp(16px, 2.5vw, 32px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            line-height: 0;
+            text-decoration: none;
+            transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .brand:hover { transform: scale(1.02); }
+        .brand-logo {
+            height: 38px;
+            width: auto;
+            display: block;
+        }
+        .brand-logo.logo-dark { display: none !important; }
+        .brand-logo.logo-light { display: block !important; }
+
+        [data-theme="dark"] .brand-logo.logo-dark { display: block !important; }
+        [data-theme="dark"] .brand-logo.logo-light { display: none !important; }
+
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) .brand-logo.logo-dark { display: block !important; }
+            :root:not([data-theme="light"]) .brand-logo.logo-light { display: none !important; }
+        }
+
+        .topbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            background: color-mix(in srgb, var(--surface) 75%, transparent);
+            padding: 4px;
+            border-radius: 9999px;
+            border: 1px solid var(--line);
+            box-shadow: 0 1px 2px rgba(18, 20, 28, 0.03);
+        }
+        .nav a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: 9999px;
+            color: var(--muted);
+            font-size: 13.5px;
+            font-weight: 500;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid transparent;
+        }
+        .nav-icon {
+            width: 14px;
+            height: 14px;
+            opacity: 0.7;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+            flex-shrink: 0;
+        }
+        .nav a:hover {
+            color: var(--ink);
+            background: var(--surface);
+        }
+        .nav a:hover .nav-icon {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        .topbar-divider {
+            width: 1px;
+            height: 20px;
+            background: var(--line);
+            margin: 0 2px;
+            flex-shrink: 0;
+        }
+
+        .github-star-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: 9999px;
+            border: 1px solid var(--line);
+            background: var(--surface);
+            color: var(--ink);
+            font-size: 13px;
+            font-weight: 500;
+            text-decoration: none;
+            box-shadow: 0 1px 2px rgba(18, 20, 28, 0.03);
+            transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+            flex-shrink: 0;
+        }
+        .github-star-btn:hover {
+            background: var(--surface-2);
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-1px);
+            box-shadow: 0 3px 10px var(--accent-soft);
+        }
+        .github-star-btn:active { transform: scale(0.96); }
+        .github-icon { width: 15px; height: 15px; flex-shrink: 0; }
+
+        /* Round Morph Theme Toggle Button */
+        .theme-toggle-btn {
+            position: relative;
+            width: 38px;
+            height: 38px;
+            border-radius: 9999px;
+            border: 1px solid var(--line);
+            background: var(--surface);
+            color: var(--ink);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            padding: 0;
+            flex-shrink: 0;
+            box-shadow: 0 1px 2px rgba(18, 20, 28, 0.04);
+            transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+        }
+        .theme-toggle-btn:hover {
+            background: var(--surface-2);
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: scale(1.08);
+            box-shadow: 0 4px 14px var(--accent-soft);
+        }
+        .theme-toggle-btn:active { transform: scale(0.92); }
+        .theme-toggle-icon {
+            width: 19px;
+            height: 19px;
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+        }
+        .theme-toggle-icon.sun-icon { opacity: 1; transform: scale(1) rotate(0deg); }
+        .theme-toggle-icon.moon-icon { opacity: 0; transform: scale(0.3) rotate(90deg); }
+        [data-theme="dark"] .theme-toggle-icon.sun-icon { opacity: 0; transform: scale(0.3) rotate(-90deg); }
+        [data-theme="dark"] .theme-toggle-icon.moon-icon { opacity: 1; transform: scale(1) rotate(0deg); }
+
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) .theme-toggle-icon.sun-icon { opacity: 0; transform: scale(0.3) rotate(-90deg); }
+            :root:not([data-theme="light"]) .theme-toggle-icon.moon-icon { opacity: 1; transform: scale(1) rotate(0deg); }
+        }
+
+        /* Container */
+        .resources-container {
+            width: min(1300px, 100%);
+            margin: 0 auto;
+            padding: 36px clamp(16px, 2.5vw, 32px) 80px;
+        }
+
+        /* Breadcrumb / Back Link */
+        .page-back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 13.5px;
+            font-weight: 500;
+            margin-bottom: 24px;
+            padding: 6px 12px;
+            border-radius: 999px;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            transition: all 0.2s ease;
+        }
+        .page-back-link:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+            transform: translateX(-3px);
+        }
+
+        /* Hero Section */
+        .resources-hero {
+            margin-bottom: 36px;
+        }
+        .resources-title {
+            margin: 0 0 14px;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            color: var(--ink);
+        }
+        .resources-subtitle {
+            margin: 0;
+            max-width: 780px;
+            color: var(--muted);
+            font-size: clamp(1rem, 2vw, 1.15rem);
+            line-height: 1.6;
+        }
+
+        /* Resources Cards Grid */
+        .resources-page-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 24px;
+        }
+        @media (max-width: 480px) {
+            .resources-page-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Resource Card */
+        .res-card {
+            display: flex;
+            flex-direction: column;
+            padding: 28px;
+            border-radius: 24px;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow);
+            color: inherit;
+            text-decoration: none;
+            position: relative;
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                        border-color 0.2s ease,
+                        box-shadow 0.25s ease;
+            overflow: hidden;
+        }
+        .res-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent);
+            box-shadow: 0 8px 30px -6px var(--accent-soft), var(--shadow);
+        }
+        .res-card:active { transform: scale(0.985); }
+
+        .res-card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+        .res-card-icon-wrap {
+            width: 52px;
+            height: 52px;
+            border-radius: 16px;
+            background: var(--surface-2);
+            border: 1px solid var(--line);
+            display: grid;
+            place-items: center;
+            color: var(--accent);
+            transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+            flex-shrink: 0;
+        }
+        .res-card:hover .res-card-icon-wrap {
+            transform: scale(1.08);
+            background: var(--accent-soft);
+            border-color: var(--accent);
+        }
+
+        .res-category-badge {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 999px;
+            border: 1px solid transparent;
+        }
+        .badge-sheet {
+            background: color-mix(in srgb, #f97316 12%, transparent);
+            color: #f97316;
+            border-color: color-mix(in srgb, #f97316 35%, transparent);
+        }
+        .badge-cses {
+            background: color-mix(in srgb, #3b82f6 12%, transparent);
+            color: #3b82f6;
+            border-color: color-mix(in srgb, #3b82f6 35%, transparent);
+        }
+        .badge-python {
+            background: color-mix(in srgb, #eab308 12%, transparent);
+            color: #eab308;
+            border-color: color-mix(in srgb, #eab308 35%, transparent);
+        }
+        .badge-book {
+            background: color-mix(in srgb, #ef4444 12%, transparent);
+            color: #ef4444;
+            border-color: color-mix(in srgb, #ef4444 35%, transparent);
+        }
+        .badge-oeis {
+            background: color-mix(in srgb, #a855f7 12%, transparent);
+            color: #a855f7;
+            border-color: color-mix(in srgb, #a855f7 35%, transparent);
+        }
+
+        .res-card-title {
+            margin: 0 0 10px;
+            font-family: var(--font-display);
+            font-size: 1.45rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--ink);
+            line-height: 1.2;
+        }
+
+        .res-card-desc {
+            margin: 0 0 20px;
+            color: var(--muted);
+            font-size: 14.5px;
+            line-height: 1.55;
+            flex: 1;
+        }
+
+        .res-tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 24px;
+        }
+        .res-pill-tag {
+            font-size: 11.5px;
+            font-weight: 500;
+            padding: 3px 9px;
+            border-radius: 6px;
+            background: var(--surface-2);
+            border: 1px solid var(--line);
+            color: var(--muted);
+        }
+
+        .res-card-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding-top: 18px;
+            border-top: 1px solid var(--line);
+            margin-top: auto;
+        }
+        .res-domain {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12.5px;
+            color: var(--muted);
+            font-family: var(--font-mono, monospace);
+        }
+        .res-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+        .res-action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 9px 16px;
+            border-radius: 12px;
+            background: var(--surface-2);
+            border: 1px solid var(--line);
+            color: var(--ink);
+            font-size: 13.5px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        .res-card:hover .res-action-btn {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--on-accent);
+        }
+        .res-action-arrow {
+            transition: transform 0.2s ease;
+        }
+        .res-card:hover .res-action-arrow {
+            transform: translate(2px, -2px);
+        }
+
+        /* Footer */
+        .site-footer {
+            width: min(1400px, 100%);
+            margin: 60px auto 0;
+            padding: 0 clamp(16px, 2.5vw, 32px) 36px;
+        }
+        .footer-inner {
+            border-top: 1px solid var(--line);
+            padding-top: 48px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.3fr;
+            gap: 40px 32px;
+            margin-bottom: 48px;
+        }
+        .footer-brand-col {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .footer-brand {
+            display: inline-flex;
+            line-height: 0;
+        }
+        .footer-brand .brand-logo {
+            height: 40px;
+            width: auto;
+        }
+        .footer-tagline {
+            margin: 0;
+            max-width: 38ch;
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--muted);
+        }
+        .footer-col-title {
+            margin: 0 0 16px;
+            font-family: var(--font-display);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--ink);
+        }
+        .footer-nav-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .footer-nav-list a {
+            color: var(--muted);
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.2s ease, transform 0.2s ease;
+            display: inline-block;
+        }
+        .footer-nav-list a:hover {
+            color: var(--accent);
+            transform: translateX(3px);
+        }
+        .creator-card {
+            padding: 16px;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .creator-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .creator-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--accent-soft);
+            border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+            color: var(--accent);
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 14px;
+            display: grid;
+            place-items: center;
+        }
+        .creator-name {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--ink);
+            line-height: 1.2;
+        }
+        .creator-handle { font-size: 12px; color: var(--muted); }
+        .creator-links { display: flex; gap: 8px; }
+        .creator-social-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+            background: var(--surface-2);
+            border: 1px solid var(--line);
+            color: var(--muted);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .creator-social-btn:hover {
+            background: var(--accent-soft);
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+        .footer-bottom {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding-top: 24px;
+            border-top: 1px solid var(--line);
+            font-size: 13px;
+            color: var(--muted);
+        }
+        .footer-bottom-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .footer-copy strong { color: var(--ink); }
+        .footer-disclaimer { font-size: 12px; opacity: 0.8; }
+        .back-to-top {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 999px;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            color: var(--muted);
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .back-to-top:hover {
+            background: var(--accent-soft);
+            border-color: var(--accent);
+            color: var(--ink);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 992px) {
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px 24px; }
+            .footer-brand-col { grid-column: 1 / -1; }
+        }
+        @media (max-width: 680px) {
+            .topbar { padding: 8px clamp(12px, 2.5vw, 20px); gap: 8px; }
+            .brand-logo { height: 32px !important; }
+            .github-star-btn .github-text { display: none; }
+            .github-star-btn { padding: 7px; width: 34px; height: 34px; justify-content: center; }
+            .nav a { padding: 5px 9px; font-size: 12.5px; gap: 4px; }
+            .nav-icon { width: 13px; height: 13px; }
+        }
+        @media (max-width: 600px) {
+            .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+            .footer-bottom { flex-direction: column; align-items: flex-start; }
+            .back-to-top { align-self: flex-start; }
+        }
+        @media (max-width: 480px) {
+            .topbar-divider { display: none; }
+            .nav a span { display: none; }
+            .nav a { padding: 7px; border-radius: 50%; }
+            .nav-icon { width: 15px; height: 15px; }
+            .theme-toggle-btn { width: 34px; height: 34px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .res-card, .res-card-icon-wrap, .res-action-btn, .nav a { transition: none; }
+            .res-card:hover { transform: none; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header" id="top">
+    <div class="topbar">
+        <a class="brand" href="/" aria-label="LeetNode home">
+            <img th:src="@{/images/leetnode-logo-light.svg}" src="/images/leetnode-logo-light.svg"
+                 alt="LeetNode" class="brand-logo logo-light">
+            <img th:src="@{/images/leetnode-logo-dark.svg}" src="/images/leetnode-logo-dark.svg"
+                 alt="LeetNode" class="brand-logo logo-dark">
+        </a>
+        <div class="topbar-actions">
+            <nav class="nav" aria-label="Main Navigation">
+                <a href="/rating" th:href="@{/rating}">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M12 14l4-4"/><path d="M3.3 17a9 9 0 1 1 17.4 0"/>
+                    </svg>
+                    <span>Predict rating</span>
+                </a>
+                <a href="/profile" th:href="@{/profile}">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                    </svg>
+                    <span>Recommendations</span>
+                </a>
+                <a href="/filter" th:href="@{/filter}">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+                    </svg>
+                    <span>Filter</span>
+                </a>
+                <a href="/roadmap" th:href="@{/roadmap}">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="12" r="3"/>
+                        <line x1="8.5" y1="7.5" x2="15.5" y2="10.5"/><line x1="8.5" y1="16.5" x2="15.5" y2="13.5"/>
+                    </svg>
+                    <span>Roadmap</span>
+                </a>
+            </nav>
+            <div class="topbar-divider" aria-hidden="true"></div>
+            <a class="github-star-btn" href="https://github.com/Sreecharan1703/Leetcode_Rating_Predictor" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository" title="Star LeetNode on GitHub">
+                <svg class="github-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+                <span class="github-text">Star</span>
+            </a>
+            <button id="themeToggleBtn" class="theme-toggle-btn" type="button" aria-label="Toggle theme" title="Toggle theme">
+                <svg class="theme-toggle-icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="4.5" fill="currentColor"/>
+                    <line x1="12" y1="2" x2="12" y2="4.2"/><line x1="12" y1="19.8" x2="12" y2="22"/>
+                    <line x1="4.93" y1="4.93" x2="6.48" y2="6.48"/><line x1="17.52" y1="17.52" x2="19.07" y2="19.07"/>
+                    <line x1="2" y1="12" x2="4.2" y2="12"/><line x1="19.8" y1="12" x2="22" y2="12"/>
+                    <line x1="4.93" y1="19.07" x2="6.48" y2="17.52"/><line x1="17.52" y1="6.48" x2="19.07" y2="4.93"/>
+                </svg>
+                <svg class="theme-toggle-icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+</header>
+
+<main class="resources-container">
+    <a href="/" th:href="@{/}" class="page-back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Back to Home
+    </a>
+
+    <header class="resources-hero">
+        <h1 class="resources-title">Essential Resources for Competitive Programmers</h1>
+        <p class="resources-subtitle">Handpicked sheets, algorithmic benchmarks, clean cses solutions, and mathematical references.</p>
+    </header>
+
+    <!-- Resource Cards Grid -->
+    <div class="resources-page-grid" id="resourcesGrid">
+
+        <!-- 1. Striver's Sheet -->
+        <a class="res-card" href="https://takeuforward.org/prep-hub/strivers-a2z-dsa-sheet?page=sheet" target="_blank" rel="noopener noreferrer" data-category="sheet" data-title="striver's sheet strivers a2z dsa takeuforward roadmap interview tracker">
+            <div class="res-card-top">
+                <div class="res-card-icon-wrap" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 11 12 14 22 4"/>
+                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                    </svg>
+                </div>
+                <span class="res-category-badge badge-sheet">DSA Sheet</span>
+            </div>
+            <h2 class="res-card-title">Striver's A2Z DSA Sheet</h2>
+            <p class="res-card-desc">Most famous topic-wise A2Z DSA roadmap from elementary basics to advanced interview problems.</p>
+            <div class="res-tag-list">
+                <span class="res-pill-tag">A2Z Sheet</span>
+                <span class="res-pill-tag">Step-by-Step</span>
+                <span class="res-pill-tag">FAANG Prep</span>
+                <span class="res-pill-tag">Interview Tracker</span>
+            </div>
+            <div class="res-card-bottom">
+                <span class="res-domain"><span class="res-dot" aria-hidden="true"></span>takeuforward.org</span>
+                <span class="res-action-btn">Open Sheet <span class="res-action-arrow" aria-hidden="true">↗</span></span>
+            </div>
+        </a>
+
+        <!-- 2. CSES Problem Set -->
+        <a class="res-card" href="https://cses.fi/problemset" target="_blank" rel="noopener noreferrer" data-category="problemset" data-title="cses problemset competitive programming benchmark tasks algorithms fi">
+            <div class="res-card-top">
+                <div class="res-card-icon-wrap" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                        <line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+                        <path d="m7 8 3 3-3 3"/><line x1="13" y1="14" x2="17" y2="14"/>
+                    </svg>
+                </div>
+                <span class="res-category-badge badge-cses">Problem Set</span>
+            </div>
+            <h2 class="res-card-title">CSES Problem Set</h2>
+            <p class="res-card-desc">The premium collection of 300+ classic competitive programming problems.</p>
+            <div class="res-tag-list">
+                <span class="res-pill-tag">300+ Problems</span>
+                <span class="res-pill-tag">CP Benchmark</span>
+                <span class="res-pill-tag">Classic Algorithms</span>
+                <span class="res-pill-tag">Automated Judge</span>
+            </div>
+            <div class="res-card-bottom">
+                <span class="res-domain"><span class="res-dot" aria-hidden="true"></span>cses.fi/problemset</span>
+                <span class="res-action-btn">Solve on CSES <span class="res-action-arrow" aria-hidden="true">↗</span></span>
+            </div>
+        </a>
+
+        <!-- 3. CSES Solutions in Python -->
+        <a class="res-card" href="https://github.com/OmAmar106/CSES-in-Python" target="_blank" rel="noopener noreferrer" data-category="python" data-title="cses solutions in python omamar106 github code repository python3">
+            <div class="res-card-top">
+                <div class="res-card-icon-wrap" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="6" y1="3" x2="6" y2="15"/>
+                        <circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/>
+                        <path d="M18 9a9 9 0 0 1-9 9"/>
+                    </svg>
+                </div>
+                <span class="res-category-badge badge-python">Solutions</span>
+            </div>
+            <h2 class="res-card-title">CSES Solutions in Python</h2>
+            <p class="res-card-desc">Clean python solutions and explanations for the CSES problem set by OmAmar, the lord of IIITN</p>
+            <div class="res-tag-list">
+                <span class="res-pill-tag">Python</span>
+                <span class="res-pill-tag">Tested Solutions</span>
+                <span class="res-pill-tag">OmAmar</span>
+                <span class="res-pill-tag">Leetcode Guardian (top 0.16%)</span>
+                <span class="res-pill-tag">codechef AIR 69</span>
+            </div>
+            <div class="res-card-bottom">
+                <span class="res-domain"><span class="res-dot" aria-hidden="true"></span>github.com/OmAmar106</span>
+                <span class="res-action-btn">View Code <span class="res-action-arrow" aria-hidden="true">↗</span></span>
+            </div>
+        </a>
+
+        <!-- 4. CP Handbook -->
+        <a class="res-card" href="https://cses.fi/book/book.pdf" target="_blank" rel="noopener noreferrer" data-category="book" data-title="cp hand book competitive programmers handbook antti laaksonen pdf algorithms textbook cses">
+            <div class="res-card-top">
+                <div class="res-card-icon-wrap" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                    </svg>
+                </div>
+                <span class="res-category-badge badge-book">Book</span>
+            </div>
+            <h2 class="res-card-title">CP Handbook</h2>
+            <p class="res-card-desc">The definitive cp algorithmic textbook. you can find almost anything here.</p>
+            <div class="res-tag-list">
+                <span class="res-pill-tag">Free PDF Book</span>
+                <span class="res-pill-tag">Algorithms Theory</span>
+                <span class="res-pill-tag">ICPC / IOI</span>
+            </div>
+            <div class="res-card-bottom">
+                <span class="res-domain"><span class="res-dot" aria-hidden="true"></span>cses.fi/book (PDF)</span>
+                <span class="res-action-btn">Read PDF <span class="res-action-arrow" aria-hidden="true">↗</span></span>
+            </div>
+        </a>
+
+        <!-- 5. Number Sequence Encyclopedia (OEIS) -->
+        <a class="res-card" href="https://oeis.org/" target="_blank" rel="noopener noreferrer" data-category="oeis" data-title="number sequence encyclopedia oeis on-line encyclopedia of integer sequences math combinatorics recurrence dynamic programming">
+            <div class="res-card-top">
+                <div class="res-card-icon-wrap" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 4H6l7 8-7 8h12"/>
+                    </svg>
+                </div>
+                <span class="res-category-badge badge-oeis">Maths!</span>
+            </div>
+            <h2 class="res-card-title">Number Sequence Encyclopedia</h2>
+            <p class="res-card-desc">The On-Line Encyclopedia of Integer Sequences (OEIS) is the competitive coder's secret weapon.</p>
+            <div class="res-tag-list">
+                <span class="res-pill-tag">Integer Sequences</span>
+                <span class="res-pill-tag">DP Recurrences</span>
+                <span class="res-pill-tag">Combinatorics</span>
+                <span class="res-pill-tag">OEIS Database</span>
+            </div>
+            <div class="res-card-bottom">
+                <span class="res-domain"><span class="res-dot" aria-hidden="true"></span>oeis.org</span>
+                <span class="res-action-btn">Search OEIS <span class="res-action-arrow" aria-hidden="true">↗</span></span>
+            </div>
+        </a>
+
+    </div>
+
+</main>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <div class="footer-brand-col">
+                <a class="footer-brand" href="/" aria-label="LeetNode home">
+                    <img th:src="@{/images/leetnode-logo-dark.svg}" src="/images/leetnode-logo-dark.svg" alt="LeetNode" class="brand-logo logo-dark" width="130" height="34" />
+                    <img th:src="@{/images/leetnode-logo-light.svg}" src="/images/leetnode-logo-light.svg" alt="LeetNode" class="brand-logo logo-light" width="130" height="34" />
+                </a>
+                <p class="footer-tagline">
+                    Continuous contest difficulty ratings, personalized practice tracks, and targeted problem filters for competitive programmers.
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h3 class="footer-col-title">Platform Tools</h3>
+                <ul class="footer-nav-list">
+                    <li><a href="/rating" th:href="@{/rating}">Rating Predictor</a></li>
+                    <li><a href="/profile" th:href="@{/profile}">Problem Recommendations</a></li>
+                    <li><a href="/filter" th:href="@{/filter}">Rating Range Filter</a></li>
+                    <li><a href="/roadmap" th:href="@{/roadmap}">DSA Roadmap</a></li>
+                    <li><a href="/#faq" th:href="@{/#faq}">Contest Rating FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3 class="footer-col-title">Practice Bands</h3>
+                <ul class="footer-nav-list">
+                    <li><a href="/filter" th:href="@{/filter}">Foundation (1200 – 1400)</a></li>
+                    <li><a href="/filter" th:href="@{/filter}">Intermediate (1400 – 1600)</a></li>
+                    <li><a href="/filter" th:href="@{/filter}">Knight Badge Zone (1600 – 1900)</a></li>
+                    <li><a href="/filter" th:href="@{/filter}">Guardian Zone (1900 – 2200)</a></li>
+                    <li><a href="/filter" th:href="@{/filter}">Grandmaster (2200+)</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3 class="footer-col-title">Creator</h3>
+                <div class="creator-card">
+                    <div class="creator-meta">
+                        <div class="creator-avatar" aria-hidden="true">SK</div>
+                        <div>
+                            <div class="creator-name">Sreecharan Kesireddy</div>
+                            <div class="creator-handle">IIIT Nagpur · Lead, CP/DSA GDG</div>
+                        </div>
+                    </div>
+                    <div class="creator-links">
+                        <a class="creator-social-btn" href="https://github.com/Sreecharan1703" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                        </a>
+                        <a class="creator-social-btn" href="https://www.linkedin.com/in/sreecharan-kesireddy" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                        <a class="creator-social-btn" href="https://leetcode.com/u/sreecharan_17" target="_blank" rel="noopener noreferrer" aria-label="LeetCode profile">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 4.818 3.538 5.876 5.876 0 0 0 3.321-.738 5.79 5.79 0 0 0 2.695-3.18 1.386 1.386 0 0 0-.16-1.127 1.393 1.393 0 0 0-1.07-.638 1.38 1.38 0 0 0-1.11.451 3.018 3.018 0 0 1-1.399 1.637 3.067 3.067 0 0 1-1.718.384 3.125 3.125 0 0 1-2.528-1.85 3.09 3.09 0 0 1-.183-.533 3.012 3.012 0 0 1-.033-1.248 2.87 2.87 0 0 1 .64-1.122l3.856-4.129 4.407-4.717a1.383 1.383 0 0 0 .332-1.386 1.374 1.374 0 0 0-.958-.962zm5.727 7.026a1.37 1.37 0 0 0-1.07.638 1.38 1.38 0 0 0 .452 1.91 3.018 3.018 0 0 1 1.399 1.637 3.067 3.067 0 0 1 .384 1.718 3.125 3.125 0 0 1-1.85 2.528 3.09 3.09 0 0 1-.533.183 3.012 3.012 0 0 1-1.248.033 2.87 2.87 0 0 1-1.122-.64l-4.717-4.407a1.38 1.38 0 0 0-1.91.452 1.37 1.37 0 0 0 .452 1.91l4.717 4.407a5.266 5.266 0 0 0 2.104 1.209 5.35 5.35 0 0 0 .513.125 5.527 5.527 0 0 0 2.362-.062 5.83 5.83 0 0 0 1.017-.349 5.938 5.938 0 0 0 3.538-4.818 5.876 5.876 0 0 0-.738-3.321 5.79 5.79 0 0 0-3.18-2.695 1.386 1.386 0 0 0-.48-.094z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-info">
+                <div class="footer-copy">© 2026 <strong>LeetNode</strong> · Engineered by Sreecharan Kesireddy</div>
+                <div class="footer-disclaimer">LeetNode is an independent community initiative for competitive programmers and is not affiliated with LeetCode.</div>
+            </div>
+            <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Scroll back to top">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+                Back to top
+            </button>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Header scroll blur effect
+    const header = document.querySelector('.site-header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 20) {
+            header.classList.add('is-scrolled');
+        } else {
+            header.classList.remove('is-scrolled');
+        }
+    }, { passive: true });
+
+    // Round Morph View Transition Theme Toggle
+    const themeBtn = document.getElementById('themeToggleBtn');
+    function applyTheme(next) {
+        document.documentElement.setAttribute('data-theme', next);
+        try { localStorage.setItem('theme', next); } catch (e) {}
+    }
+    themeBtn.addEventListener('click', (e) => {
+        const current = document.documentElement.getAttribute('data-theme') ||
+            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        const next = current === 'dark' ? 'light' : 'dark';
+
+        if (!document.startViewTransition) {
+            applyTheme(next);
+            return;
+        }
+
+        const rect = themeBtn.getBoundingClientRect();
+        const x = rect.left + rect.width / 2;
+        const y = rect.top + rect.height / 2;
+        const maxRadius = Math.hypot(
+            Math.max(x, window.innerWidth - x),
+            Math.max(y, window.innerHeight - y)
+        );
+
+        const transition = document.startViewTransition(() => {
+            applyTheme(next);
+        });
+
+        transition.ready.then(() => {
+            document.documentElement.animate(
+                {
+                    clipPath: [
+                        `circle(0px at ${x}px ${y}px)`,
+                        `circle(${maxRadius}px at ${x}px ${y}px)`
+                    ]
+                },
+                {
+                    duration: 480,
+                    easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
+                    pseudoElement: '::view-transition-new(root)'
+                }
+            );
+        });
+    });
+
+</script>
+
+</body>
+</html>

@@ -70,6 +70,8 @@
             "LeetCode Contest Rating Predictor",
             "Personalized Problem Recommendations Based on User Rating",
             "Custom Rating Range Problem Filter",
+            "Interactive DSA Roadmap",
+            "Curated Competitive Programming & DSA Resources",
             "Algorithmic Topic Tag Categorization",
             "Dark and Light Theme with View Transition Morph Animation"
           ],
@@ -129,6 +131,14 @@
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Yes! With the Filter tool, you can specify any minimum and maximum rating (for example, 1600 to 1800 for Knight badge preparation or 2000+ for Guardian badge preparation) and get a paginated list of matching problems with direct links to solve them."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What curated competitive programming and DSA resources does LeetNode feature?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "LeetNode curates top-tier external CP and DSA resources including Striver's A2Z DSA Sheet, the CSES Problem Set, CSES Solutions in Python by OmAmar106, Antti Laaksonen's Competitive Programmer's Handbook, and the On-Line Encyclopedia of Integer Sequences (OEIS)."
               }
             }
           ]
@@ -1242,6 +1252,38 @@
                 </div>
                 <span class="option-cta">Explore Roadmap <span class="cta-arrow" aria-hidden="true">→</span></span>
             </a>
+
+            <!-- Resources Card -->
+            <a class="option" href="/resources" th:href="@{/resources}">
+                <div class="option-icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                        <line x1="9" y1="7" x2="15" y2="7"/>
+                        <line x1="9" y1="11" x2="13" y2="11"/>
+                    </svg>
+                </div>
+                <h2>Curated Resources</h2>
+                <p>Essential DSA sheets, benchmark problem sets, clean Python solutions, and CP reference books.</p>
+                <div class="preview preview-resources" aria-hidden="true">
+                    <div class="preview-header">
+                        <span class="preview-title-chip">Top CP / DSA Assets</span>
+                        <span class="preview-pill pill-easy">5 Curated</span>
+                    </div>
+                    <div class="preview-tag-list">
+                        <span class="preview-sub-tag">Striver Sheet</span>
+                        <span class="preview-sub-tag">CSES Set</span>
+                        <span class="preview-sub-tag">CSES Solutions</span>
+                        <span class="preview-sub-tag">CP Handbook</span>
+                        <span class="preview-sub-tag">OEIS Math</span>
+                    </div>
+                    <div class="preview-meter-meta">
+                        <span>Free Resources</span>
+                        <span style="color:var(--accent); font-weight:600;">Browse Library ↗</span>
+                    </div>
+                </div>
+                <span class="option-cta">Explore Resources <span class="cta-arrow" aria-hidden="true">→</span></span>
+            </a>
         </div>
     </div>
 </div>
@@ -1310,6 +1352,16 @@
             </summary>
             <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                 <p itemprop="text">Yes! With the Filter tool, you can specify any minimum and maximum rating (for example, 1600 to 1800 for Knight badge preparation or 2000+ for Guardian badge preparation) and get a paginated list of matching problems with direct links to solve them.</p>
+            </div>
+        </details>
+
+        <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <summary class="faq-question">
+                <span itemprop="name">What curated competitive programming and DSA resources does LeetNode recommend?</span>
+                <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <p itemprop="text">LeetNode features trusted community tools and guides in the Resources card: Striver's A2Z DSA Sheet for interview readiness, the CSES Problem Set for benchmark algorithms, CSES Solutions in Python by OmAmar106 for clean code, Antti Laaksonen's Competitive Programmer's Handbook (PDF), and OEIS (The On-Line Encyclopedia of Integer Sequences) for mathematical problem solving and DP recurrence patterns.</p>
             </div>
         </details>
     </div>
