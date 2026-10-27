@@ -161,9 +161,23 @@ The starting point. Choose what you want to do.
 4. **Search & Filter**: Type in the search box to find specific topics or filter by difficulty tier.
 5. **Progress Tracker**: Check off topics as you master them to track your completion percentage in real time.
 
+<img width="1897" height="908" alt="Screenshot 2026-10-27 153350" src="https://github.com/user-attachments/assets/df0f1c55-e5f5-49f7-83f1-d58ad6d14a88" />
+<img width="1897" height="828" alt="Screenshot 2026-10-27 153421" src="https://github.com/user-attachments/assets/3de24f77-afe9-4c4c-b71c-3330951faf84" />
+<img width="1895" height="828" alt="Screenshot 2026-10-27 153457" src="https://github.com/user-attachments/assets/e9f9be0d-b4b4-4361-8446-b80e7ec9fb3f" />
+<img width="1897" height="818" alt="Screenshot 2026-10-27 153510" src="https://github.com/user-attachments/assets/abb3d033-7f50-4376-9c75-74aca6f0250d" />
+
 ---
 
-### 6. Error page
+### 6. Resources
+
+A single place to find many popular resources. users can access them with a single click.
+
+<img width="1897" height="887" alt="Screenshot 2026-10-27 153927" src="https://github.com/user-attachments/assets/613720ae-6153-417c-9de5-67b08a8c6afa" />
+<img width="1891" height="663" alt="Screenshot 2026-10-27 154010" src="https://github.com/user-attachments/assets/06aef5ac-6513-409f-9ee9-6a9a4b506570" />
+
+---
+
+### 7. Error page
 
 If something goes wrong (for example a problem number that doesn't exist), you are taken to a friendly error page that shows what happened and a button back to the search.
 
