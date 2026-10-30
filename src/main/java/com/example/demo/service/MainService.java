@@ -23,9 +23,11 @@ public class MainService {
     private MainService self;
 
     private final QuestionRepo questionRepo;
+    private final LeetcodeScraperService leetcodeScraperService;
 
-    MainService(QuestionRepo questionRepo) {
+    MainService(QuestionRepo questionRepo, LeetcodeScraperService leetcodeScraperService) {
         this.questionRepo = questionRepo;
+        this.leetcodeScraperService = new LeetcodeScraperService(questionRepo);
     }
 
     private String convertListtoString(List<String> topiclist){
@@ -43,7 +45,7 @@ public class MainService {
     }
 
     public Data getDetails(int id){
-        Map<String,Object> mp = LeetcodeScraperService.getLeetCodeData(id);
+        Map<String,Object> mp = leetcodeScraperService.getLeetCodeData(id);
 
         List<String> topiclist = (List<String>) mp.get("TopicTags");
 

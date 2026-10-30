@@ -17,4 +17,7 @@ public interface QuestionRepo extends JpaRepository<Question, Integer> {
 
     @Query("SELECT e.rating FROM Question e WHERE e.id = :id")
     Optional<Integer> getQuestionRatingById(@Param("id") int id);
+
+    @Query("SELECT e.titleSlug FROM Question e WHERE e.id = :id")
+    Optional<String> getTitleSlugById(@Param("id") int id);
 }
